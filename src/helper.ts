@@ -24,7 +24,6 @@ import {
   SiMaterialdesign,
   SiTypescript,
 } from "react-icons/si";
-import Image from "next/image";
 import { IconType } from "react-icons";
 // Navigation Types
 export interface NavItemProps {
