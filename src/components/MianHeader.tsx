@@ -47,8 +47,10 @@ const MianHeader = () => {
 
   return (
     <>
-      {/* Toggle Button (Optional) */}
       <div className="hidden md:flex fixed top-4 right-4 z-50">
+         <h1 className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
+          Romi.Dev
+        </h1>
         <button
           onClick={() => setShowSidebar((prev) => !prev)}
           className="p-2 rounded-md border border-[#9f70fd] bg-[#1a1a1a] text-white"
@@ -57,7 +59,6 @@ const MianHeader = () => {
         </button>
       </div>
 
-      {/* Desktop Sidebar */}
       <AnimatePresence>
         {showSidebar && (
           <motion.nav
