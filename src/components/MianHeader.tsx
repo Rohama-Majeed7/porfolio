@@ -33,7 +33,7 @@ const MianHeader = () => {
 
   return (
     <>
-      <div className="hidden md:flex  justify-between z-50 p-3 bg-[#1a1a1a]">
+      <div className="hidden md:flex  justify-between border-2 border-b-[#9f70fd] border-r-0 border-t-0 border-l-0 z-50 p-3 bg-[#0a0a0a8a]">
          <Link href={"/"} className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
           Romi.Dev
         </Link>
