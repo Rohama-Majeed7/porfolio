@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Mail,
   Phone,
-  Github,
-  Linkedin,
   Send,
   LinkedinIcon,
   GithubIcon,

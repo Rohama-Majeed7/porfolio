@@ -3,7 +3,6 @@ import React from "react";
 import myImg from "@/1718159743761-removebg-preview.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import NavItems from "@/components/NavItems";
 
 const AboutPage = () => {
   return (
@@ -18,7 +17,6 @@ const AboutPage = () => {
         transition={{ duration: 0.6 }}
         className="sm:w-[98vw] relative w-full md:rounded-lg  max-w-[1050px] bg-[#0a0a0a] gap-3 items-center mx-auto flex flex-col md:flex-row justify-between p-6"
       >
-        {/* <NavItems /> */}
 
         <motion.article
           initial={{ opacity: 0, scale: 0.8 }}
