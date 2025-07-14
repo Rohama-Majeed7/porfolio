@@ -35,7 +35,11 @@ const sidebarVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80 } },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring" as const, stiffness: 80 },
+  },
 };
 
 const MianHeader = () => {
@@ -43,18 +47,17 @@ const MianHeader = () => {
 
   return (
     <>
-      <div className="hidden md:flex justify-between p-2 bg-[#0a0a0a]">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
-          Romi.Dev
-        </h1>
+      {/* Toggle Button (Optional) */}
+      <div className="hidden md:flex fixed top-4 right-4 z-50">
         <button
           onClick={() => setShowSidebar((prev) => !prev)}
-          className="p-2 rounded-md cursor-pointer border border-[#9f70fd] bg-[#1a1a1a] text-white"
+          className="p-2 rounded-md border border-[#9f70fd] bg-[#1a1a1a] text-white"
         >
           {showSidebar ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
+      {/* Desktop Sidebar */}
       <AnimatePresence>
         {showSidebar && (
           <motion.nav
