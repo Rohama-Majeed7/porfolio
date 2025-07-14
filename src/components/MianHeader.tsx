@@ -47,7 +47,7 @@ const MianHeader = () => {
 
   return (
     <>
-      <div className="hidden md:flex fixed top-4 right-4 z-50">
+      <div className="hidden md:flex  justify-between z-50">
          <h1 className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
           Romi.Dev
         </h1>
