@@ -2,23 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-const resumeData = [
-  {
-    year: "2019 - 2020",
-    title: "Matriculation",
-    desc: "Muslim Green Public School, M.Garh",
-  },
-  {
-    year: "2020 - 2022",
-    title: "Intermediate",
-    desc: "Govt Degree College, M.Garh",
-  },
-  {
-    year: "2022 - 2026",
-    title: "Software Engineering, Graduation",
-    desc: "UET, Taxila",
-  },
-];
+import { resumeData } from "@/helper";
 
 const ResumeContent = () => {
   return (
@@ -56,7 +40,7 @@ const ResumeContent = () => {
         </div>
 
         <Link
-          href="/cv.pdf"
+          href="/myResume/Rohama-Resume-2025.pdf"
           download
           className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto mt-6 sm:mb-0 mb-8"
         >

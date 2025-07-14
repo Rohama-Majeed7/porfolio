@@ -34,9 +34,9 @@ const MianHeader = () => {
   return (
     <>
       <div className="hidden md:flex  justify-between z-50 p-3 bg-[#1a1a1a]">
-         <h1 className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
+         <Link href={"/"} className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
           Romi.Dev
-        </h1>
+        </Link>
         <button
           onClick={() => setShowSidebar((prev) => !prev)}
           className="p-2 rounded-md border border-[#9f70fd] bg-[#1a1a1a] text-white"

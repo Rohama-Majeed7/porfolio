@@ -19,9 +19,9 @@ const Header = () => {
   return (
     <>
       <div className="flex justify-between items-center p-4 w-full   border-b-2 border-[#9f70fd] shadow-md md:hidden z-50">
-        <h1 className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
+        <Link href={"/"} className="text-2xl font-bold bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] bg-clip-text text-transparent">
           Romi.Dev
-        </h1>
+        </Link>
         <button
           onClick={() => setIsMobileOpen((prev) => !prev)}
           className="p-2 z-50 rounded-md border border-[#9f70fd] bg-[#1a1a1a] text-white"

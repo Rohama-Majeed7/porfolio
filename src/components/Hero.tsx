@@ -5,6 +5,7 @@ import BlinkText from "@/components/BlinkText";
 import myImg from "@/myImgs/my-img.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Hero = () => {
   const [spin, setSpin] = useState(true);
@@ -61,13 +62,12 @@ const Hero = () => {
               with a passion for detail and polish.
             </p>
 
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+            <Link
+              href={"/contact"}
               className="px-7 py-3 bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-semibold rounded-full shadow-md hover:shadow-[0_0_20px_#ff6ec7] transition duration-300 w-fit mx-auto md:mx-0"
             >
               Hire Me
-            </motion.button>
+            </Link>
           </motion.article>
 
           <motion.article

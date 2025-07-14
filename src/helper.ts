@@ -68,3 +68,21 @@ export const backendSkills: SkillProps[] = [
   { name: "Express.js", icon: SiExpress, color:"text-gray-300" },
   { name: "MongoDB", icon: SiMongodb, color:"text-green-400" },
 ];
+
+export const resumeData = [
+  {
+    year: "2019 - 2020",
+    title: "Matriculation",
+    desc: "Muslim Green Public School, M.Garh",
+  },
+  {
+    year: "2020 - 2022",
+    title: "Intermediate",
+    desc: "Govt Degree College, M.Garh",
+  },
+  {
+    year: "2022 - 2026",
+    title: "Software Engineering, Graduation",
+    desc: "UET, Taxila",
+  },
+];

@@ -3,6 +3,7 @@ import React from "react";
 import myImg from "@/myImgs/1718159743761-removebg-preview.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const AboutContent = () => {
   return (
@@ -58,13 +59,13 @@ const AboutContent = () => {
             <span className="text-[#ff6ec7]">15+</span> Projects Completed
           </h2>
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+          <Link
+            href="/myResume/Rohama-Resume-2025.pdf"
+            download
             className="px-6 py-3 rounded-full bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-bold shadow-md hover:scale-105 hover:shadow-[#ff6ec7]/40 transition-all duration-300 w-fit mx-auto md:mx-0 sm:mb-0 mb-8"
           >
-            📄 Download CV
-          </motion.button>
+           Download CV
+          </Link>
         </motion.article>
       </motion.div>
     </section>
