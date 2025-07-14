@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import myImg from "@/1718159743761-removebg-preview.png";
+import myImg from "@/myImgs/1718159743761-removebg-preview.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 

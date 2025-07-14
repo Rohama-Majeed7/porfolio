@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import BlinkText from "@/components/BlinkText";
-import myImg from "@/my-img.png";
+import myImg from "@/myImgs/my-img.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
