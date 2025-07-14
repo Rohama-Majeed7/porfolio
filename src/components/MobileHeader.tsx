@@ -2,26 +2,9 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import {
-  Home,
-  User,
-  FileText,
-  FolderKanban,
-  Code,
-  Mail,
-  Menu,
-  X,
-} from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { navItems, NavItemProps } from "@/helper";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navItems = [
-  { href: "/", icon: <Home size={22} />, label: "Home" },
-  { href: "/about", icon: <User size={22} />, label: "About" },
-  { href: "/resume", icon: <FileText size={22} />, label: "Resume" },
-  { href: "/projects", icon: <FolderKanban size={22} />, label: "Projects" },
-  { href: "/skills", icon: <Code size={22} />, label: "Skills" },
-  { href: "/contact", icon: <Mail size={22} />, label: "Contact" },
-];
 
 const Header = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -65,19 +48,21 @@ const Header = () => {
               transition={{ duration: 0.4, ease: "easeInOut" }}
               className="fixed top-0 right-0 h-full w-[220px] bg-[#0a0a0a52] backdrop-blur-lg flex flex-col items-start pt-28 px-4 gap-6 z-40"
             >
-              {navItems.map(({ href, icon, label }, idx) => (
-                <Link
-                  key={idx}
-                  href={href}
-                  onClick={() => setIsMobileOpen(false)}
-                  className="flex items-center gap-4 w-full py-2 hover:bg-[#1a1a1a] rounded-lg transition-all"
-                >
-                  <div className="p-3 rounded-full border-2 border-[#9f70fd] bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300">
-                    {icon}
-                  </div>
-                  <span className="text-white">{label}</span>
-                </Link>
-              ))}
+              {navItems.map(
+                ({ href, icon: Icon, label }: NavItemProps, idx) => (
+                  <Link
+                    key={idx}
+                    href={href}
+                    onClick={() => setIsMobileOpen(false)}
+                    className="flex items-center gap-4 w-full py-2 hover:bg-[#1a1a1a] rounded-lg transition-all"
+                  >
+                    <div className="p-3 rounded-full border-2 border-[#9f70fd] bg-[#1a1a1a] text-white hover:bg-gradient-to-tr from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] shadow-lg transition-all duration-300">
+                      <Icon size={22} />
+                    </div>
+                    <span className="text-white">{label}</span>
+                  </Link>
+                )
+              )}
             </motion.div>
           </>
         )}

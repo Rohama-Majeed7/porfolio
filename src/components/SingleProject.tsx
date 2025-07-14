@@ -35,7 +35,6 @@ const SingleProject = ({
           scale ? "scale-50 opacity-0" : "scale-100 opacity-100"
         }`}
       >
-        {/* Close Icon */}
         <FaTimes
           onClick={() => {
             onClose(false);
@@ -44,9 +43,7 @@ const SingleProject = ({
           className="absolute top-3 right-4 text-2xl md:text-3xl text-white hover:text-[#ff6ec7] cursor-pointer transition-all duration-200"
         />
 
-        {/* Modal Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 items-center">
-          {/* Project Image */}
           <div className="w-full rounded-xl overflow-hidden">
             <Image
               src={singleProject.proImg}
@@ -57,7 +54,6 @@ const SingleProject = ({
             />
           </div>
 
-          {/* Project Details */}
           <div className="flex flex-col gap-4 md:gap-6">
             <h2 className="text-[#f1f1f1] text-xl md:text-2xl font-bold">
               Project Details

@@ -1,7 +1,6 @@
 "use client"
 
 import React from "react";
-// import "/My-Portfolio/src/App.css"; // Assuming animation keyframes go here or in global CSS
 
 const MovingText = () => {
   return (

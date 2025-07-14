@@ -13,7 +13,7 @@ const BlinkText = () => {
       className="text-center md:text-left flex flex-col gap-2 md:gap-4"
     >
       <span className="text-[#ff6ec7] text-xl font-medium animate-pulse">
-        Hello! 👋
+        Hello!
       </span>
 
       <h1 className="md:text-4xl text-2xl font-bold text-white leading-tight">
@@ -32,7 +32,7 @@ const BlinkText = () => {
       </h1>
 
       <h2 className="md:text-3xl text-xl font-semibold text-gray-300 tracking-wide">
-        A Freelancer Web Developer
+        A Freelance Web Developer
       </h2>
     </motion.div>
   );
