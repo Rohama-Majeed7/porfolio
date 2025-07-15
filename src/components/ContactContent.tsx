@@ -1,13 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  Send,
-  LinkedinIcon,
-  GithubIcon,
-} from "lucide-react";
+import { Mail, Phone, Send, LinkedinIcon, GithubIcon } from "lucide-react";
 import Link from "next/link";
 import ContactImg from "@/projects/contact.png";
 import Image from "next/image";
@@ -51,16 +45,18 @@ const ContactContent = () => {
             <input
               type="text"
               placeholder="Your Name"
+              required
               className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
             />
             <input
               type="email"
               placeholder="Your Email"
+              required
               className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
             />
             <textarea
               placeholder="Your Message"
-              // rows="5"
+              required
               className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
             ></textarea>
             <button
