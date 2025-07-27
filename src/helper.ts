@@ -34,7 +34,7 @@ export interface NavItemProps {
 
 export const navItems: NavItemProps[] = [
   { href: "/", icon: Home, label: "Home" },
-  { href: "/about", icon: User, label: "About" },
+  // { href: "/about", icon: User, label: "About" },
   { href: "/resume", icon: FileText, label: "Resume" },
   { href: "/projects", icon: FolderKanban, label: "Projects" },
   { href: "/skills", icon: Code, label: "Skills" },

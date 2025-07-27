@@ -25,26 +25,23 @@ const ProjectsContent: React.FC = () => {
   };
 
   return (
-    <section
-      id="projects"
-      className="flex justify-center bg-gradient-to-tr from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]
-       items-center min-h-screen"
-    >
+    <section id="projects" className="bg-[#26333a] p-2 sm:rounded-lg h-[87%]">
       <motion.main
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="sm:w-[98vw] w-full md:rounded-lg max-w-[1050px] flex flex-col gap-2 bg-[#0a0a0a]  mx-auto p-4"
+        className="h-full flex flex-col"
       >
-        <div className="text-center">
+        <div className="text-left flex flex-col gap-2">
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className=" font-extrabold text-[#9f70fd] sm:text-5xl text-4xl"
+            className=" font-extrabold text-[#4fced5] text-2xl "
           >
-            My Projects
+            <span className="text-white">My</span> Projects
           </motion.p>
+          <div className="bg-[#4fced5] h-1 w-30 rounded-lg mb-2"></div>
         </div>
 
         <div className="flex  flex-wrap items-center justify-center gap-3 my-[20px]">
@@ -68,26 +65,26 @@ const ProjectsContent: React.FC = () => {
               onClick={btn.action || undefined}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 cursor-pointer py-2 rounded-lg border-1 border-[#9f70fd] hover:bg-[#9f70fd] text-white font-semibold transition-all duration-300 "
+              className="px-4 cursor-pointer py-2 rounded-lg border-1 border-[#4fced5] hover:bg-[#4fced5] text-white font-semibold transition-all duration-300 "
             >
               {btn.label}
             </motion.button>
           ))}
         </div>
 
-        <h1 className="text-white font-bold text-3xl text-ceenter border-1 border-b-[#9f70fd] border-l-0 border-r-0 border-t-0">
+        <h1 className="text-white font-bold text-2xl text-ceenter border-1 border-b-[#9f70fd] border-l-0 border-r-0 border-t-0">
           {label.toUpperCase()}
         </h1>
         <motion.div
           layout
-          className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-6 mb-[100px] mt-2"
+          className="h-full overflow-auto scrollable grid grid-cols-[repeat(auto-fill,minmax(150px,1fr))] gap-2 p-2"
         >
           {project.map((pro, index) => (
             <motion.div
               key={index}
               layout
               whileHover={{ scale: 1.03 }}
-              className="group relative h-[200px] rounded-xl overflow-hidden shadow-md hover:shadow-[#ff6ec7]/30 transition-all duration-300 cursor-pointer border-3 p-2 border-[#9f70fd]"
+              className="group relative h-[200px] rounded-xl overflow-hidden shadow-md hover:shadow-[#4fced5]/30 transition-all duration-300 cursor-pointer border-3 p-2 border-[#4fced5]"
             >
               <Image
                 src={pro.proImg}
@@ -100,7 +97,7 @@ const ProjectsContent: React.FC = () => {
                 <p className="text-sm text-white mb-4">
                   Click for more details
                 </p>
-                <FaAngleDown className="text-xl text-[#9f70fd] animate-bounce mb-2" />
+                <FaAngleDown className="text-xl text-[#4fced5] animate-bounce mb-2" />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

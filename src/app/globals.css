@@ -2,12 +2,34 @@
 
 @import "tailwindcss";
 body {
-  @apply bg-gradient-to-tr from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f] text-white;
+  /* @apply bg-gradient-to-tr from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f] text-white; */
   font-family: "Poppins", sans-serif;
+  /* background-color: #457e8c; */
 }
 
 @layer utilities {
   .animate-spin-slow {
     animation: spin 3s linear infinite;
   }
+}
+.scrollable::-webkit-scrollbar {
+  width: 8px; /* 6px thumb + 3px padding on each side = 12px */
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: #1a2328; /* gray background */
+  border-radius: 8px;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #4fced5;
+  border-radius: 6px;
+
+  /* Simulate padding using transparent border */
+  border: 2px solid transparent;
+
+  /* Show track background through the border */
+  background-clip: content-box;
+
+  /* box-shadow: 0 0 5px #4fced5; optional glow */
 }

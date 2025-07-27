@@ -1,11 +1,13 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import BlinkText from "@/components/BlinkText";
-import myImg from "@/myImgs/my-img.png";
+// import BlinkText from "@/components/BlinkText";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { Mail, Phone, LinkedinIcon, GithubIcon } from "lucide-react";
 import Link from "next/link";
+import BlinkText from "./BlinkText";
+import { FileUser } from "lucide-react";
 
 const Hero = () => {
   const [spin, setSpin] = useState(true);
@@ -21,71 +23,65 @@ const Hero = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, ease: "easeOut" }}
-      className="flex justify-center bg-gradient-to-tr from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]
- items-center min-h-[85vh]"
+      className=" bg-[#26333a] border-2 border-[#4fced5] shadow-[0_0_7px_#4fced5] sm:rounded-lg relative h-fit md:h-full "
     >
-      <main className="relative w-full sm:w-[98vw] max-w-[1150px] mx-auto flex flex-col text-[#f1f1f1] ">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-3xl py-2 md:text-5xl  font-extrabold bg-gradient-to-r text-[#9f70fd]">
-            Rohama Majeed
-          </h1>
-          <p className="text-lg md:text-xl text-[#a1a1aa] my-3">
-            Software Engineer
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="flex flex-col md:flex-row max-w-[1050px] w-full mx-auto items-center justify-between gap-10 bg-[#0a0a0a] md:rounded-xl shadow-2xl px-6 py-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 1 }}
-        >
-          <motion.article
-            className="flex flex-col gap-6 md:w-[52%] text-center md:text-left"
-            initial={{ x: -60, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+      <Image
+        src={"/mern.png"}
+        height={50}
+        width={100}
+        className="w-full bg-[#000000c0] opacity-60 h-[200px] object-cover sm:rounded-t-lg rounded-b-0  "
+        alt="mern"
+      />
+      <Image
+        src={"/my2img.png"}
+        height={100}
+        width={100}
+        alt="myimg"
+        className="p-1 absolute top-[35%] left-[35%] md:top-[30%] md:left-[35%] rounded-full border-2 border-[#50ced6]"
+      />
+      <div className="flex flex-col mt-[60px] gap-4 items-center justify-center p-2">
+        <div className="flex flex-col gap-1 items-center">
+          <p className="font-bold text-white">Rohama Majeed</p>
+          <BlinkText />
+        </div>
+        <div className="flex justify-center gap-3">
+          <Link
+            href={"mailto:rohamamajeed4@gmail.com"}
+            className="bg-[#1a2328] h-10 w-10 rounded-lg text-white hover:text-[#50ced6] hover:bg-white  transition-all p-2"
           >
-            <BlinkText />
-
-            <p className="text-[17px]  text-[#a1a1aa]">
-              I am a{" "}
-              <span className="text-[#c084fc] font-semibold">
-                creative developer
-              </span>{" "}
-              crafting sleek, responsive, and user-centered digital experiences
-              with a passion for detail and polish.
-            </p>
-
-            <Link
-              href={"/contact"}
-              className="px-7 py-3 bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7] text-white font-semibold rounded-full shadow-md hover:shadow-[0_0_20px_#ff6ec7] transition duration-300 w-fit mx-auto md:mx-0"
-            >
-              Hire Me
-            </Link>
-          </motion.article>
-
-          <motion.article
-            className="md:w-[42%] w-full flex justify-center"
-            initial={{ rotate: -10, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.3 }}
+            <Mail className="text-sm" />
+          </Link>
+          <Link
+            href={"tel:+923250336309"}
+            className="bg-[#1a2328] h-10 w-10 rounded-lg text-white hover:text-[#50ced6] hover:bg-white  transition-all p-2"
           >
-            <Image
-              src={myImg}
-              alt="Rohama Majeed"
-              className={`w-[300px] mb-[65px] sm:m-0 sm:max-w-[250px] rounded-2xl border-[1.5px] border-[#9f70fd] shadow-[0_0_30px_#9f70fd50] object-cover transition-transform duration-500 ${
-                spin ? "animate-spin-slow" : "hover:scale-105"
-              }`}
-            />
-          </motion.article>
-        </motion.div>
-      </main>
+            <Phone />
+          </Link>
+          <Link
+            href={"https://linkedin.com/in/rohama-majeed-213124282"}
+            className="bg-[#1a2328] h-10 w-10 rounded-lg text-white hover:text-[#50ced6] hover:bg-white  transition-all p-2"
+          >
+            <LinkedinIcon />
+          </Link>
+          <Link
+            href={"https://github.com/Rohama-Majeed7"}
+            className="bg-[#1a2328] h-10 w-10 rounded-lg text-white hover:text-[#50ced6] hover:bg-white  transition-all p-2"
+          >
+            <GithubIcon />
+          </Link>
+        </div>
+      </div>
+      <div className="md:absolute bottom-0 w-full">
+        <div className="flex justify-between items-center">
+          <Link
+            href={"/myResume/Rohama-Resume-2025.pdf"}
+            className="underline px-4 py-3 text-[#50ced6]"
+          >
+            My Resume
+          </Link>
+          <FileUser className="text-white" />
+        </div>
+      </div>
     </motion.section>
   );
 };

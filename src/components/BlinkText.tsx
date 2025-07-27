@@ -12,15 +12,10 @@ const BlinkText = () => {
       transition={{ duration: 1 }}
       className="text-center md:text-left flex flex-col gap-2 md:gap-4"
     >
-      <span className="text-[#ff6ec7] text-xl font-medium animate-pulse">
-        Hello!
-      </span>
-
-      <h1 className="md:text-4xl text-2xl font-bold text-white leading-tight">
-        I am a{" "}
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9f70fd] via-[#c084fc] to-[#ff6ec7]">
+     
+        <span className="text-[#50ced6] font-bold">
           <Typewriter
-            words={["Frontend Developer", "Mern Developer", "Designer"]}
+            words={["Software Engineer","Mern Full Stack"]}
             loop={0}
             cursor
             cursorStyle="_"
@@ -29,11 +24,9 @@ const BlinkText = () => {
             delaySpeed={1500}
           />
         </span>
-      </h1>
+      
 
-      <h2 className="md:text-3xl text-xl font-semibold text-gray-300 tracking-wide">
-        A Freelance Web Developer
-      </h2>
+     
     </motion.div>
   );
 };

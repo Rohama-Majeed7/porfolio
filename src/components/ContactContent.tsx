@@ -10,89 +10,72 @@ const ContactContent = () => {
   return (
     <section
       id="contact"
-      className="flex justify-center  bg-gradient-to-tr from-[#0a0a0a] via-[#1a1a1a] to-[#0f0f0f]
-       items-center min-h-[85vh]"
+      className="bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] sm:rounded-lg relative h-[86%] p-2"
     >
       <motion.main
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="sm:w-[98vw] w-full md:rounded-lg  max-w-[1050px] bg-[#0a0a0a] gap-8 items-center mx-auto flex flex-col justify-between p-4"
+        className="flex flex-col gap-3 h-full "
       >
-        <div className="text-center">
-          <p className="sm:text-5xl text-4xl font-extrabold text-[#9f70fd]">
-            Contact Me
-          </p>
+       <div className="text-left">
+          <p className=" font-extrabold text-[#4fced5] text-2xl  "><span className="text-white">Contact</span>{" "}Me</p>
+          <div className="bg-[#4fced5] h-1 w-34 rounded-lg mb-2"></div>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8  items-center">
-          <div className="space-y-5 self-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Image
-                src={ContactImg}
-                alt="contact-iamge"
-                className="w-[50%] sm:block hidden mx-auto"
-              />
-            </motion.div>
-          </div>
-
-          <form className="space-y-2 max-w-[450px] self-center bg-[#1a1a1a] p-6 rounded-2xl border border-[#9f70fd]/30 shadow-md">
+        
+<div className="h-full overflow-auto md:w-[80%] w-[96%] mx-auto">
+          <form className="space-y-2  h-full  self-center bg-[#1a2328] p-6 rounded-2xl border border-[#4fced5]/30 shadow-md">
             <input
               type="text"
               placeholder="Your Name"
               required
-              className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
+              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
             />
             <input
               type="email"
               placeholder="Your Email"
               required
-              className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
+              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
             />
             <textarea
               placeholder="Your Message"
               required
-              className="w-full p-3 bg-[#292929] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#9f70fd]"
+              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
             ></textarea>
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-[#9f70fd] to-[#ff6ec7] text-white p-3 rounded-xl font-semibold hover:opacity-90 transition-all duration-300"
+              className="flex items-center justify-center gap-2 w-full bg-gradient-to-b cursor-pointer from-[#326E7D] to-[#1E2F39]  text-white p-3 rounded-xl font-semibold hover:opacity-90 transition-all duration-300"
             >
               <Send className="w-5 h-5" /> Send Message
             </button>
-            <div className="flex justify-center gap-3 mt-3">
+            <div className="flex justify-center gap-3 mt-3 text-white">
               <Link
                 href={"mailto:rohamamajeed4@gmail.com"}
-                className="rounded-full border-2 border-[#9f70fd] hover:bg-white hover:text-[#9f70fd] transition-all p-2"
+                className="rounded-full border-2 border-[#4fced5] hover:bg-white hover:text-[#4fced5] transition-all p-2"
               >
                 <Mail />
               </Link>
               <Link
                 href={"tel:+923250336309"}
-                className="rounded-full border-2 hover:bg-white hover:text-[#9f70fd] transition-all border-[#9f70fd] p-2"
+                className="rounded-full border-2 hover:bg-white hover:text-[#4fced5] transition-all border-[#4fced5] p-2"
               >
                 <Phone />
               </Link>
               <Link
                 href={"https://linkedin.com/in/rohama-majeed-213124282"}
-                className="rounded-full hover:bg-white hover:text-[#9f70fd] transition-all border-2 border-[#9f70fd] p-2"
+                className="rounded-full hover:bg-white hover:text-[#4fced5] transition-all border-2 border-[#4fced5] p-2"
               >
                 <LinkedinIcon />
               </Link>
               <Link
                 href={"https://github.com/Rohama-Majeed7"}
-                className="rounded-full hover:bg-white hover:text-[#9f70fd] transition-all border-2 border-[#9f70fd] p-2"
+                className="rounded-full hover:bg-white hover:text-[#4fced5] transition-all border-2 border-[#4fced5] p-2"
               >
                 <GithubIcon />
               </Link>
             </div>
           </form>
-        </div>
+          </div>
       </motion.main>
     </section>
   );
