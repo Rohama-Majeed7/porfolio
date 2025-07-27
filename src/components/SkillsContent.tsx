@@ -5,7 +5,7 @@ import { SkillProps, frontendSkills, backendSkills } from "@/helper";
 
 const SkillsContent = () => {
   return (
-    <section id="skills" className="bg-[#26333a] h-[87%] p-2 sm:rounded-lg">
+    <section id="skills" className="bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] h-[87%] p-2 sm:rounded-lg">
       <main className="h-full flex flex-col">
         <div className="text-left flex flex-col gap-2">
           <motion.p
@@ -20,11 +20,11 @@ const SkillsContent = () => {
         </div>
         <div className="flex flex-col  w-full mx-auto overflow-auto scrollable">
           <div className="grid grid-cols-1 w-full gap-2">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col  gap-2">
               <h3 className="text-xl font-semibold text-white text-center  md:text-left">
                 Frontend
               </h3>
-              <div className="flex gap-2 flex-wrap ">
+              <div className="flex gap-2 flex-wrap justify-center md:justify-start ">
                 {frontendSkills.map(
                   ({ name, icon: Icon, color }: SkillProps, idx) => (
                     <motion.div
@@ -49,7 +49,7 @@ const SkillsContent = () => {
               <h3 className="text-xl font-semibold text-white text-center md:text-left mt-5">
                 Backend
               </h3>
-              <div className="flex  flex-wrap gap-6">
+              <div className="flex  flex-wrap justify-center md:justify-start gap-6">
                 {backendSkills.map(
                   ({ name, icon: Icon, color }: SkillProps, idx) => (
                     <motion.div

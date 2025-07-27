@@ -9,7 +9,7 @@ const AboutContent = () => {
   return (
     <section
       id="about"
-      className="bg-[#26333a] h-[87%] sm:rounded-lg "
+      className="bg-[#26333a] h-[87%] sm:rounded-lg border-[#4fced5] shadow-[0_0_7px_#4fced5]"
     >
       <main className="flex flex-col p-2 h-full">
         <div className="text-left">

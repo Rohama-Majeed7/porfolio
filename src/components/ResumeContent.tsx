@@ -8,7 +8,7 @@ const ResumeContent = () => {
   return (
     <section
       id="resume"
-      className="flex bg-[#26333a] h-[87%] p-2 sm:rounded-lg"
+      className="flex bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] h-[87%] p-2 sm:rounded-lg"
     >
       <main className="flex flex-col justify-center">
         <div className="text-left">

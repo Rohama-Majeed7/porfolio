@@ -25,7 +25,7 @@ const ProjectsContent: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="bg-[#26333a] p-2 sm:rounded-lg h-[87%]">
+    <section id="projects" className="bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] p-2 sm:rounded-lg h-[87%]">
       <motion.main
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -72,7 +72,7 @@ const ProjectsContent: React.FC = () => {
           ))}
         </div>
 
-        <h1 className="text-white font-bold text-2xl text-ceenter border-1 border-b-[#9f70fd] border-l-0 border-r-0 border-t-0">
+        <h1 className="text-white font-bold text-2xl text-ceenter border-1 border-b-[#4fced5] border-l-0 border-r-0 border-t-0">
           {label.toUpperCase()}
         </h1>
         <motion.div

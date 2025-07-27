@@ -24,7 +24,7 @@ const Hero = () => {
         src={"/mern.png"}
         height={50}
         width={100}
-        className="w-full bg-[#000000c0] opacity-60 h-[200px] object-cover sm:rounded-t-lg rounded-b-0  "
+        className="w-full bg-[#000000c0]  h-[200px] object-contain sm:rounded-t-lg rounded-b-0  "
         alt="mern"
       />
       <Image
