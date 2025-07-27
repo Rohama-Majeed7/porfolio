@@ -5,22 +5,19 @@ import { SkillProps, frontendSkills, backendSkills } from "@/helper";
 
 const SkillsContent = () => {
   return (
-    <section
-      id="skills"
-      className="bg-[#26333a] h-[87%] p-2 sm:rounded-lg"
-    >
+    <section id="skills" className="bg-[#26333a] h-[87%] p-2 sm:rounded-lg">
       <main className="h-full flex flex-col">
         <div className="text-left flex flex-col gap-2">
-                  <motion.p
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                    className=" font-extrabold text-[#4fced5] text-2xl "
-                  >
-                    <span className="text-white">My</span> Skills
-                  </motion.p>
-                  <div className="bg-[#4fced5] h-1 w-27 rounded-lg mb-2"></div>
-                </div>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className=" font-extrabold text-[#4fced5] text-2xl "
+          >
+            <span className="text-white">My</span> Skills
+          </motion.p>
+          <div className="bg-[#4fced5] h-1 w-27 rounded-lg mb-2"></div>
+        </div>
         <div className="flex flex-col  w-full mx-auto overflow-auto scrollable">
           <div className="grid grid-cols-1 w-full gap-2">
             <div className="flex flex-col gap-2">

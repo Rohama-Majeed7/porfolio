@@ -3,8 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, Send, LinkedinIcon, GithubIcon } from "lucide-react";
 import Link from "next/link";
-import ContactImg from "@/projects/contact.png";
-import Image from "next/image";
 
 const ContactContent = () => {
   return (
