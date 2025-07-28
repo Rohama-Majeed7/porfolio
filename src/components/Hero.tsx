@@ -9,9 +9,6 @@ import BlinkText from "./BlinkText";
 import { FileUser } from "lucide-react";
 
 const Hero = () => {
-
-
-
   return (
     <motion.section
       id="home"
@@ -28,12 +25,12 @@ const Hero = () => {
         alt="mern"
       />
       <Image
-  src="/my2img.png"
-  height={100}
-  width={100}
-  alt="myimg"
-  className="p-1 shadow-md shadow-[#50ced6] absolute left-1/2 top-[90px] -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-[#50ced6]"
-/>
+        src="/my2img.png"
+        height={100}
+        width={100}
+        alt="myimg"
+        className="p-1 shadow-md shadow-[#50ced6] absolute left-1/2 top-[90px] -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-[#50ced6]"
+      />
 
       <div className="flex flex-col mt-[60px] gap-4 items-center justify-center p-2">
         <div className="flex flex-col gap-1 items-center">
