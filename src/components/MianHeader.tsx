@@ -28,7 +28,7 @@ const MianHeader = () => {
                   <div className="p-2 text-sm rounded-full border-2 border-[#4fced5] bg-[#1a2328] text-white hover:bg-gradient-to-tr from-[#4fced5] via-[#4fced5] to-[#4fced5] shadow-lg transition-all duration-300 hover:scale-110">
                     <Icon size={22} />
                   </div>
-                  <span className="absolute right-14 opacity-0 group-hover:opacity-100 translate-x-3 group-hover:translate-x-0 transition-all duration-300 text-white bg-[#1a2328] px-3 py-1 text-sm hidden sm:block rounded-md shadow-lg whitespace-nowrap">
+                  <span className="absolute bottom-[50px] border-[#4fced5] border-2 shadow  opacity-0 group-hover:opacity-100 translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-white bg-[#1a2328] px-3 py-1 text-sm hidden md:block rounded-md shadow-[#4fced5] whitespace-nowrap">
                     {label}
                   </span>
                 </Link>

@@ -24,16 +24,17 @@ const Hero = () => {
         src={"/mern.png"}
         height={50}
         width={100}
-        className="w-full bg-[#000000c0]  h-[200px] object-contain sm:rounded-t-lg rounded-b-0  "
+        className="w-full bg-[#000000c0]  h-[200px] object-cover sm:rounded-t-lg rounded-b-0  "
         alt="mern"
       />
       <Image
-        src={"/my2img.png"}
-        height={100}
-        width={100}
-        alt="myimg"
-        className="p-1 absolute top-[35%] left-[35%] md:top-[30%] md:left-[35%] rounded-full border-2 border-[#50ced6]"
-      />
+  src="/my2img.png"
+  height={100}
+  width={100}
+  alt="myimg"
+  className="p-1 shadow-md shadow-[#50ced6] absolute left-1/2 top-[90px] -translate-x-1/2 translate-y-1/2 rounded-full border-2 border-[#50ced6]"
+/>
+
       <div className="flex flex-col mt-[60px] gap-4 items-center justify-center p-2">
         <div className="flex flex-col gap-1 items-center">
           <p className="font-bold text-white">Rohama Majeed</p>
