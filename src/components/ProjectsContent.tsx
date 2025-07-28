@@ -72,7 +72,7 @@ const ProjectsContent: React.FC = () => {
           ))}
         </div>
 
-        <h1 className="text-white font-bold text-2xl text-ceenter border-1 border-b-[#4fced5] border-l-0 border-r-0 border-t-0">
+        <h1 className="text-white font-bold text-xl  border-1 border-b-[#4fced5] border-l-0 border-r-0 border-t-0">
           {label.toUpperCase()}
         </h1>
         <motion.div
