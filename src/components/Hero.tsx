@@ -8,6 +8,7 @@ import Link from "next/link";
 import BlinkText from "./BlinkText";
 import { FileUser } from "lucide-react";
 
+
 const Hero = () => {
   return (
     <motion.section

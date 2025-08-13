@@ -14,6 +14,12 @@ import Prac4Img from "@/projects/prac4.png";
 import Prac6Img from "@/projects/prac6.png";
 import Prac7Img from "@/projects/ecommerce-stack.png";
 import Prac8Img from "@/projects/post-creation.png";
+import Prac9Img from "@/projects/videoApp-next.png";
+import Prac10Img from "@/projects/job-post-App.png";
+import Prac11Img from "@/projects/chatApp.png";
+import Prac12Img from "@/projects/product-landing-page.png";
+import Prac13Img from "@/projects/waether-dashboard.png";
+import Prac14Img from "@/projects/spotify-clone.png";
 
 import type { StaticImageData } from "next/image";
 
@@ -162,6 +168,54 @@ const projects: Project[] = [
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "🌟 Mern Full Stack project - Post Creation Website Project 🌟",
     projectType: "backend",
+  },
+  {
+    proImg: Prac9Img,
+    link: "https://video-app-c7gf.vercel.app",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - Video Uplaoding App Website Project 🌟",
+    projectType: "backend",
+  },
+  {
+    proImg: Prac10Img,
+    link: "https://job-post-1rn4.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - Job Posting App Website Project 🌟",
+    projectType: "backend",
+  },
+   {
+    proImg: Prac11Img,
+    link: "#",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - Chat App Website Project 🌟",
+    projectType: "backend",
+  },
+  {
+    proImg: Prac12Img,
+    link: "https://smart-wtach-landing-page-yxyf.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/smartWtach-landing-page",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Frontend Internship project - Product-Landing-Page Website Project 🌟",
+    projectType: "frontend",
+  },
+  {
+    proImg: Prac13Img,
+    link: "https://weather-dashboard-ten-rust.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/weather-dashboard",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Frontend Internship project - Weather App Website Project 🌟",
+    projectType: "frontend",
+  },
+  {
+    proImg: Prac14Img,
+    link: "https://spotify-clone-topaz-nu.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/spotify-clone",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Frontend Internship project - Spotify Clone Website Project 🌟",
+    projectType: "frontend",
   },
 ];
 
