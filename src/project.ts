@@ -217,6 +217,14 @@ const projects: Project[] = [
     desc: "🌟 Frontend Internship project - Spotify Clone Website Project 🌟",
     projectType: "frontend",
   },
+    {
+    proImg: Prac14Img,
+    link: "https://chat-bot-gi5s.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/chat_bot",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Frontend  project - AI Chatbot Website Project 🌟",
+    projectType: "frontend",
+  },
 ];
 
 export default projects;
