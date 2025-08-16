@@ -22,7 +22,16 @@ import {
   SiMongodb,
   SiMaterialdesign,
   SiTypescript,
+  SiPrisma,
 } from "react-icons/si";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { RiNextjsFill } from "react-icons/ri";
+import { FaGitAlt } from "react-icons/fa";
+import { FaSquareGithub } from "react-icons/fa6";
+import { SiPostman } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
+import { SiCanva } from "react-icons/si";
+
 import { IconType } from "react-icons";
 // Navigation Types
 export interface NavItemProps {
@@ -54,6 +63,7 @@ export const frontendSkills: SkillProps[] = [
   { name: "React", icon: FaReact, color: "text-cyan-400" },
   { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-sky-400" },
   { name: "Bootstrap", icon: FaBootstrap, color: "text-purple-500" },
+  { name: "Next.js", icon: RiNextjsFill, color: "text-gray-800" },
   {
     name: "Material UI",
     icon: SiMaterialdesign,
@@ -62,11 +72,14 @@ export const frontendSkills: SkillProps[] = [
 ];
 
 export const backendSkills: SkillProps[] = [
-  { name: "Node.js", icon: FaNodeJs, color:"text-green-500"  },
-  { name: "Express.js", icon: SiExpress, color:"text-gray-300" },
-  { name: "MongoDB", icon: SiMongodb, color:"text-green-400" },
+  { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+  { name: "Express.js", icon: SiExpress, color: "text-gray-300" },
 ];
-
+export const databaseSkills: SkillProps[] = [
+  { name: "MongoDB", icon: SiMongodb, color: "text-green-400" },
+  { name: "Prisma", icon: SiPrisma, color: "text-blue-400" },
+  { name: "Postgrey", icon: BiLogoPostgresql, color: "text-blue-400" },
+];
 export const resumeData = [
   {
     year: "2019 - 2020",
@@ -83,4 +96,11 @@ export const resumeData = [
     title: "Software Engineering, Graduation",
     desc: "UET, Taxila",
   },
+];
+export const otherToolsData: SkillProps[] = [
+  { name: "Git", icon: FaGitAlt, color: "text-orange-500" },
+  { name: "GitHub", icon: FaSquareGithub, color: "text-blue-500" },
+  { name: "Postman", icon: SiPostman, color: "text-cyan-400" },
+  { name: "VS Code", icon: VscVscode, color: "text-sky-400" },
+  { name: "Canva", icon: SiCanva, color: "text-blue-400" },
 ];

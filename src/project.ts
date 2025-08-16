@@ -20,6 +20,7 @@ import Prac11Img from "@/projects/chatApp.png";
 import Prac12Img from "@/projects/product-landing-page.png";
 import Prac13Img from "@/projects/waether-dashboard.png";
 import Prac14Img from "@/projects/spotify-clone.png";
+import Prac15Img from "@/projects/chatbot.png";
 
 import type { StaticImageData } from "next/image";
 
@@ -218,7 +219,7 @@ const projects: Project[] = [
     projectType: "frontend",
   },
     {
-    proImg: Prac14Img,
+    proImg: Prac15Img,
     link: "https://chat-bot-gi5s.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7/chat_bot",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",

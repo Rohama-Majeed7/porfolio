@@ -34,11 +34,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex items-center justify-center bg-gradient-to-b from-[#326E7D] to-[#1E2F39]`}
       >
-        <section className="h-full md:h-[500px] w-full max-w-[1050px] mx-auto flex gap-2 md:flex-row flex-col p-1 md:p-3 sm:rounded-lg  bg-[#1a2328]">
-            <div className="md:w-[35%] w-full">
+        <section className="h-full md:h-[550px] w-full max-w-[1150px] mx-auto flex gap-2 md:flex-row flex-col p-1 md:p-3 sm:rounded-lg  bg-[#1a2328]">
+            <div className="md:w-[30%] w-full">
               <Hero />
             </div>
-            <main className="md:w-[65%] w-full flex flex-col gap-2">
+            <main className="md:w-[70%] w-full flex flex-col gap-2">
               <MianHeader />
               {children}
             </main>
