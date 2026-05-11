@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import myImg from "@/myImgs/1718159743761-removebg-preview.png";
 import Image from "next/image";
@@ -9,72 +10,116 @@ const AboutContent = () => {
   return (
     <section
       id="about"
-      className="bg-[#26333a] h-[87%] sm:rounded-lg border-[#4fced5] shadow-[0_0_7px_#4fced5]"
+      className="
+        h-full
+        w-full
+        rounded-2xl
+        bg-[#1b262c]
+        border border-[#4fced5]/40
+        shadow-[0_0_15px_rgba(79,206,213,0.15)]
+        overflow-hidden
+      "
     >
-      <main className="flex flex-col p-2 h-full">
-        <div className="text-left">
-          <p className=" font-extrabold text-[#4fced5] text-2xl  ">
-            <span className="text-white">About</span> Me
+      <main className="flex flex-col h-full p-4 sm:p-6 gap-4">
+        
+        {/* HEADER */}
+        <div>
+          <p className="text-2xl font-bold text-white">
+            About <span className="text-[#4fced5]">Me</span>
           </p>
-          <div className="bg-[#4fced5] h-1 w-28 rounded-lg mb-2"></div>
+          <div className="h-1 w-20 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
+
+        {/* CONTENT */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex w-full flex-col p-3 gap-3 overflow-auto scrollable h-full"
+          className="flex flex-col md:flex-row gap-6 items-center md:items-start "
         >
-          <motion.article
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="w-full max-w-[250px] border-[#4fced5] shadow-[0_0_7px_#4fced5]  rounded-lg"
+          {/* IMAGE */}
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="
+              w-[180px]
+              sm:w-[220px]
+              md:w-[250px]
+              flex-shrink-0
+              rounded-2xl
+              border border-[#4fced5]/40
+              shadow-lg
+              overflow-hidden
+            "
           >
             <Image
               src={myImg}
               alt="About"
-              className="w-full mx-auto object-cover shadow-lg rounded-lg "
+              className="w-full h-full object-cover"
             />
-          </motion.article>
+          </motion.div>
 
-          <motion.article
-            initial={{ opacity: 0, x: 50 }}
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col gap-1"
+            className="flex flex-col gap-4 text-sm sm:text-base text-gray-300"
           >
-            <p className="text-white">
+            <p>
               I’m a passionate{" "}
               <span className="text-[#4fced5] font-semibold">
                 MERN Stack Developer
               </span>{" "}
-              with a strong focus on building{" "}
-              <span className="text-[#4fced5] font-semibold">scalable</span> and{" "}
-              <span className="text-[#4fced5] font-semibold">user-first</span>{" "}
-              web applications. Skilled in{" "}
-              <span className="text-[#4fced5] font-semibold">React</span>,{" "}
-              <span className="text-[#4fced5] font-semibold">Node.js</span>,{" "}
-              <span className="text-[#4fced5] font-semibold">Express</span>,{" "}
-              <span className="text-[#4fced5] font-semibold">MongoDB</span>,{" "}
-              <span className="text-[#4fced5] font-semibold">HTML</span>,{" "}
-              <span className="text-[#4fced5] font-semibold">CSS</span>, and{" "}
-              <span className="text-[#4fced5] font-semibold">JavaScript</span>.
-              I enjoy turning ideas into interactive digital products that
-              combine clean design with efficient code.
+              focused on building modern, scalable, and user-friendly web
+              applications using clean architecture and best practices.
             </p>
 
-            <h2 className="text-2xl font-bold text-[#f1f1f1] mt-3">
-              🚀 <span className="text-[#4fced5]">15+</span> Projects Completed
-            </h2>
+            <p>
+              Skilled in{" "}
+              <span className="text-[#4fced5]">React</span>,{" "}
+              <span className="text-[#4fced5]">Node.js</span>,{" "}
+              <span className="text-[#4fced5]">Express</span>,{" "}
+              <span className="text-[#4fced5]">MongoDB</span>, and frontend
+              technologies like HTML, CSS, and JavaScript.
+            </p>
 
-            <Link
-              href="/myResume/Rohama-Resume-2025.pdf"
-              download
-              className="px-6 py-3 rounded-full bg-gradient-to-b from-[#326E7D] to-[#1E2F39] text-white font-bold shadow hover:scale-105 hover:shadow-[#4fced5] border-2 border-[#4fced5]/40 transition-all duration-300 w-fit mx-auto md:mx-0 sm:mb-0 mb-8"
-            >
-              Download CV
-            </Link>
-          </motion.article>
+            {/* STATS */}
+            <div className="flex items-center gap-3 mt-2">
+              <div className="px-4 py-2 rounded-xl bg-white/5 border border-white/10">
+                <h2 className="text-lg font-bold text-white">
+                  15+ <span className="text-[#4fced5]">Projects</span>
+                </h2>
+              </div>
+            </div>
+
+            {/* BUTTON */}
+            <div className="mt-3">
+              <Link
+                href="/myResume/Rohama-Resume-2025.pdf"
+                target="_blank"
+                className="
+                  inline-flex
+                  items-center
+                  justify-center
+                  px-5
+                  py-2.5
+                  rounded-xl
+                  bg-[#4fced5]
+                  text-black
+                  font-semibold
+                  shadow-md
+                  hover:shadow-[0_0_20px_rgba(79,206,213,0.5)]
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                "
+              >
+                Download CV
+              </Link>
+            </div>
+          </motion.div>
         </motion.div>
       </main>
     </section>

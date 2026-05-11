@@ -1,79 +1,171 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Send, LinkedinIcon, GithubIcon } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Send,
+  Linkedin,
+  Github,
+} from "lucide-react";
 import Link from "next/link";
 
 const ContactContent = () => {
   return (
     <section
       id="contact"
-      className="bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] sm:rounded-lg relative h-[86%] p-2"
+      className="
+        h-full
+        w-full
+        rounded-2xl
+        bg-[#1b262c]
+        border border-[#4fced5]/40
+        shadow-[0_0_15px_rgba(79,206,213,0.15)]
+        overflow-hidden
+      "
     >
       <motion.main
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="flex flex-col gap-3 h-full "
+        className="flex flex-col h-full p-3 sm:p-4 gap-3"
       >
-       <div className="text-left">
-          <p className=" font-extrabold text-[#4fced5] text-2xl  "><span className="text-white">Contact</span>{" "}Me</p>
-          <div className="bg-[#4fced5] h-1 w-34 rounded-lg mb-2"></div>
+        {/* HEADER */}
+        <div>
+          <p className="text-xl sm:text-2xl font-bold text-white">
+            Contact <span className="text-[#4fced5]">Me</span>
+          </p>
+          <div className="h-1 w-16 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
-        
-<div className="h-full overflow-auto md:w-[80%] w-[96%] mx-auto">
-          <form className="space-y-2  h-full  self-center bg-[#1a2328] p-6 rounded-2xl border border-[#4fced5]/30 shadow-md">
+
+        {/* FORM AREA */}
+        <div className="flex-1 flex items-center justify-center">
+          <form
+            className="
+              w-full
+              max-w-lg
+
+              space-y-3
+
+              bg-white/5
+              border border-white/10
+
+              rounded-2xl
+
+              p-4
+
+              shadow-md
+            "
+          >
             <input
               type="text"
               placeholder="Your Name"
-              required
-              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
+              className="
+                w-full
+                p-2.5
+                rounded-xl
+
+                bg-black/20
+                text-white
+
+                border border-white/10
+                focus:border-[#4fced5]
+                focus:outline-none
+              "
             />
+
             <input
               type="email"
               placeholder="Your Email"
-              required
-              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
+              className="
+                w-full
+                p-2.5
+                rounded-xl
+
+                bg-black/20
+                text-white
+
+                border border-white/10
+                focus:border-[#4fced5]
+                focus:outline-none
+              "
             />
+
             <textarea
+              rows={3}
               placeholder="Your Message"
-              required
-              className="w-full p-3 border border-[#4fced5] text-white rounded-xl focus:outline-none focus:ring-2 focus:ring-[#4fced5]"
-            ></textarea>
+              className="
+                w-full
+                p-2.5
+                rounded-xl
+
+                bg-black/20
+                text-white
+
+                border border-white/10
+                focus:border-[#4fced5]
+                focus:outline-none
+                resize-none
+              "
+            />
+
+            {/* BUTTON */}
             <button
               type="submit"
-              className="flex items-center justify-center gap-2 w-full bg-gradient-to-b cursor-pointer from-[#326E7D] to-[#1E2F39]  text-white p-3 rounded-xl font-semibold hover:opacity-90 transition-all duration-300"
+              className="
+                w-full
+                flex items-center justify-center gap-2
+
+                py-2.5
+
+                rounded-xl
+                bg-[#4fced5]
+                text-black
+                font-semibold
+
+                hover:scale-105
+                transition-all
+              "
             >
-              <Send className="w-5 h-5" /> Send Message
+              <Send size={18} />
+              Send Message
             </button>
-            <div className="flex justify-center gap-3 mt-3 text-white">
-              <Link
-                href={"mailto:rohamamajeed4@gmail.com"}
-                className="rounded-full border-2 border-[#4fced5] hover:bg-white hover:text-[#4fced5] transition-all p-2"
-              >
-                <Mail />
-              </Link>
-              <Link
-                href={"tel:+923250336309"}
-                className="rounded-full border-2 hover:bg-white hover:text-[#4fced5] transition-all border-[#4fced5] p-2"
-              >
-                <Phone />
-              </Link>
-              <Link
-                href={"https://linkedin.com/in/rohama-majeed-213124282"}
-                className="rounded-full hover:bg-white hover:text-[#4fced5] transition-all border-2 border-[#4fced5] p-2"
-              >
-                <LinkedinIcon />
-              </Link>
-              <Link
-                href={"https://github.com/Rohama-Majeed7"}
-                className="rounded-full hover:bg-white hover:text-[#4fced5] transition-all border-2 border-[#4fced5] p-2"
-              >
-                <GithubIcon />
-              </Link>
+
+            {/* SOCIALS */}
+            <div className="flex justify-center gap-3 pt-2">
+              {[
+                { icon: <Mail size={18} />, href: "mailto:rohamamajeed4@gmail.com" },
+                { icon: <Phone size={18} />, href: "tel:+923250336309" },
+                { icon: <Linkedin size={18} />, href: "https://linkedin.com/in/rohama-majeed-213124282" },
+                { icon: <Github size={18} />, href: "https://github.com/Rohama-Majeed7" },
+              ].map((item, i) => (
+                <Link
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  className="
+                    h-9 w-9
+                    flex items-center justify-center
+
+                    rounded-lg
+
+                    bg-white/5
+                    border border-white/10
+
+                    text-white
+
+                    hover:bg-[#4fced5]
+                    hover:text-black
+
+                    transition
+                  "
+                >
+                  {item.icon}
+                </Link>
+              ))}
             </div>
           </form>
-          </div>
+        </div>
       </motion.main>
     </section>
   );

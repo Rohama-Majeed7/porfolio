@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -8,42 +9,96 @@ const ResumeContent = () => {
   return (
     <section
       id="resume"
-      className="flex bg-[#26333a] border-[#4fced5] shadow-[0_0_7px_#4fced5] h-[87%] p-2 sm:rounded-lg"
+      className="
+        h-full
+        w-full
+        bg-gradient-to-br from-[#1b262c] to-[#111a20]
+        border border-[#4fced5]/30
+        rounded-2xl
+        shadow-[0_0_25px_rgba(79,206,213,0.12)]
+        overflow-hidden
+      "
     >
-      <main className="flex flex-col justify-center">
-        <div className="text-left">
-          <p className=" font-extrabold text-[#fff] text-2xl  ">Resume</p>
-          <div className="bg-[#4fced5] h-1 w-24 rounded-lg mb-2"></div>
+      <main className="flex flex-col h-full p-4 sm:p-5 gap-4">
+
+        {/* HEADER */}
+        <div>
+          <p className="text-2xl font-extrabold text-white">
+            My <span className="text-[#4fced5]">Resume</span>
+          </p>
+          <div className="h-1 w-24 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
 
-        <div className="flex flex-wrap gap-3 p-2 justify-center overflow-auto scrollable">
-          {resumeData.map((item, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.2 }}
-              className="bg-[#1a2328] h-[170px] w-[260px] p-4 rounded-2xl shadow-md hover:shadow-[#4fced5]/30 border-2 border-[#4fced5] transition-all duration-300"
-            >
-              <h2 className="text-[#4fced5] font-bold text-xl mb-2">
-                {item.year}
-              </h2>
-              <p className="text-lg text-white font-semibold mb-1">
-                {item.title}
-              </p>
-              <p className="text-[#a1a1aa]">{item.desc}</p>
-            </motion.div>
-          ))}
+        {/* TIMELINE */}
+        <div className="flex-1 relative pl-6 scrollable overflow-y-auto">
+
+          {/* vertical line */}
+          <div className="absolute left-2 top-0 bottom-0 w-[2px] bg-[#4fced5]/30"></div>
+
+          <div className="flex flex-col gap-4 ">
+            {resumeData.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="relative"
+              >
+                {/* dot */}
+                <div className="absolute -left-[22px] top-3 w-3 h-3 rounded-full bg-[#4fced5] shadow-[0_0_10px_#4fced5]" />
+
+                {/* card */}
+                <div
+                  className="
+                    bg-[#1a2328]
+                    border border-[#4fced5]/40
+                    rounded-xl
+                    p-4
+                    shadow-md
+                    hover:shadow-[#4fced5]/20
+                    transition-all
+                  "
+                >
+                  <p className="text-[#4fced5] font-bold text-sm">
+                    {item.year}
+                  </p>
+
+                  <h3 className="text-white font-semibold text-base mt-1">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-[#a1a1aa] text-sm mt-1 leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        <Link
-          href="/myResume/Rohama-Resume-2025.pdf"
-          download
-          className="px-6 py-3 rounded-full bg-gradient-to-b from-[#326E7D] to-[#1E2F39]  text-white font-bold shadow hover:scale-105 hover:shadow-[#4fced5] border-2 border-[#4fced5] /40 transition-all duration-300 self-center mx-auto md:mx-0 sm:mb-0 mb-8 mt-4"
-        >
-          Download CV
-        </Link>
+        {/* BUTTON */}
+        <div className="flex justify-center">
+          <Link
+            href="/myResume/Rohama-Resume-2025.pdf"
+            target="_blank"
+            className="
+              px-6 py-2.5
+              rounded-full
+
+              bg-[#4fced5]
+              text-black
+              font-semibold
+
+              shadow-[0_0_15px_rgba(79,206,213,0.3)]
+
+              hover:scale-105
+              transition-all
+            "
+          >
+            Download CV
+          </Link>
+        </div>
+
       </main>
     </section>
   );

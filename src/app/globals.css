@@ -19,23 +19,30 @@ html.dark {
   }
 }
 .scrollable::-webkit-scrollbar {
-  width: 8px; /* 6px thumb + 3px padding on each side = 12px */
+  width: 8px;
 }
 
 .scrollable::-webkit-scrollbar-track {
-  background: #1a2328; /* gray background */
-  border-radius: 8px;
+  background: rgba(26, 35, 40, 0.6);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-  background-color: #4fced5;
-  border-radius: 6px;
+  background: linear-gradient(180deg, #4fced5, #2dd4bf);
+  border-radius: 10px;
 
-  /* Simulate padding using transparent border */
+  /* creates spacing effect */
   border: 2px solid transparent;
-
-  /* Show track background through the border */
   background-clip: content-box;
 
-  /* box-shadow: 0 0 5px #4fced5; optional glow */
+  /* glow effect */
+  box-shadow: 0 0 10px rgba(79, 206, 213, 0.4);
+
+  transition: all 0.3s ease;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #67e8f9, #4fced5);
+  box-shadow: 0 0 15px rgba(79, 206, 213, 0.7);
 }
