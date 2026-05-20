@@ -97,7 +97,7 @@ const AboutContent = () => {
             {/* BUTTON */}
             <div className="mt-3">
               <Link
-                href="/myResume/Rohama-Resume-2025.pdf"
+                href="/myResume/Rohama-Majeed(SE).pdf"
                 target="_blank"
                 className="
                   inline-flex
