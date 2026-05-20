@@ -2,56 +2,38 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  SkillProps,
-  frontendSkills,
-  backendSkills,
-  databaseSkills,
-  otherToolsData,
-} from "@/helper";
 
-const SkillSection = ({
+const SkillGroup = ({
   title,
-  data,
+  items,
 }: {
   title: string;
-  data: SkillProps[];
+  items: string[];
 }) => {
   return (
-    <div className="flex flex-col gap-3">
-      <h3 className="text-lg font-semibold text-white text-center md:text-left">
-        {title}
-      </h3>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      viewport={{ once: true }}
+      className="bg-white/5 border border-white/10 rounded-2xl p-4 shadow-md"
+    >
+      <h3 className="text-[#4fced5] font-bold text-lg mb-3">{title}</h3>
 
-      <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-3">
-        {data.map(({ name, icon: Icon, color }, idx) => (
-          <motion.div
+      <div className="flex flex-wrap gap-2">
+        {items.map((item, idx) => (
+          <span
             key={idx}
-            whileHover={{ scale: 1.05 }}
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            className="
-              flex flex-col items-center justify-center
-              p-3
-              rounded-xl
-              bg-white/5
-              border border-[#4fced5]/30
-              shadow-sm
-              hover:shadow-[0_0_15px_rgba(79,206,213,0.3)]
-              transition-all
-              duration-300
-            "
+            className="px-3 py-1 text-xs rounded-full
+            bg-black/30 border border-white/10 text-white
+            hover:border-[#4fced5] hover:text-[#4fced5]
+            transition"
           >
-            <Icon size={20} className={color} />
-            <p className="text-[11px] mt-2 text-white text-center">
-              {name}
-            </p>
-          </motion.div>
+            {item}
+          </span>
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -59,31 +41,68 @@ const SkillsContent = () => {
   return (
     <section
       id="skills"
-      className="
-        h-full
-        w-full
-        rounded-2xl
-        bg-[#1b262c]
-        border border-[#4fced5]/40
-        shadow-[0_0_15px_rgba(79,206,213,0.15)]
-        overflow-hidden
-      "
+      className="h-full w-full rounded-2xl bg-[#1b262c] border border-[#4fced5]/40 shadow-xl overflow-hidden"
     >
-      <main className="flex flex-col h-full p-4 sm:p-6 gap-5 overflow-y-auto scrollable">
+      <main className="h-full overflow-y-auto scrollable p-4 sm:p-6 flex flex-col gap-5">
 
         {/* HEADER */}
         <div>
-          <p className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-white">
             My <span className="text-[#4fced5]">Skills</span>
-          </p>
-          <div className="h-1 w-20 bg-[#4fced5] rounded-full mt-1"></div>
+          </h2>
+          <div className="h-1 w-24 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
 
-        {/* SECTIONS */}
-        <SkillSection title="Frontend" data={frontendSkills} />
-        <SkillSection title="Backend" data={backendSkills} />
-        <SkillSection title="Database" data={databaseSkills} />
-        <SkillSection title="Other Tools" data={otherToolsData} />
+        {/* DESCRIPTION */}
+        <p className="text-gray-300 text-sm leading-relaxed">
+          I work as a full-stack developer with strong knowledge in frontend,
+          backend, software engineering fundamentals, testing, and modern tools.
+        </p>
+
+        {/* SKILL GROUPS */}
+        <SkillGroup
+          title="Frontend Development"
+          items={["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS"]}
+        />
+
+        <SkillGroup
+          title="Backend Development"
+          items={["Next.js", "Node.js", "Express.js", "MongoDB","PostgreSQL", "REST APIs",]}
+        />
+
+        <SkillGroup
+          title="Core Software Engineering"
+          items={[
+            "Data Structures & Algorithms",
+            "OOP",
+            "DBMS",
+            "Software Design & Architecture",
+            "Operating Systems",
+            "Computer Networks",
+          ]}
+        />
+
+        <SkillGroup
+          title="Software Quality Assurance (SQA)"
+          items={[
+            "Manual Testing",
+            "Unit Testing",
+            "Test Case Design",
+            "Debugging",
+          ]}
+        />
+
+        <SkillGroup
+          title="Other Tools & Technologies"
+          items={[
+            "Strapi",
+            "Git & GitHub",
+            "Responsive Design",
+            "Prisma",
+            "API Integration",
+          ]}
+        />
+
       </main>
     </section>
   );

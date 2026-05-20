@@ -49,143 +49,158 @@ export default function RootLayout({
         <div className="absolute bottom-[-120px] right-[-120px] h-[250px] sm:h-[320px] w-[250px] sm:w-[320px] rounded-full bg-blue-500/20 blur-3xl"></div>
 
         {/* MAIN WRAPPER */}
-        <div className="relative z-10 flex min-h-screen items-center justify-center p-2 sm:p-4 lg:p-6">
+        {/* MAIN WRAPPER */}
+        <div className="relative z-10 flex min-h-screen items-center justify-center p-2 sm:p-3 lg:p-2">
           <section
             className="
-              w-full
-              max-w-[1250px]
+      relative
 
-              /* MOBILE */
-              min-h-screen
-              sm:min-h-[95vh]
+      w-full
+      max-w-[1250px]
 
-              /* DESKTOP */
-              lg:h-[92vh]
-              lg:max-h-[760px]
+      min-h-screen
+      sm:min-h-[95vh]
 
-              flex
-              flex-col
-              lg:flex-row
+      lg:h-[92vh]
+      lg:max-h-[760px]
 
-              gap-4
+      flex
+      flex-col
 
-              rounded-[24px]
-              sm:rounded-[30px]
+      rounded-[20px]
+      sm:rounded-[30px]
 
-              border
-              border-white/10
+      border
+      border-white/10
 
-              bg-white/5
-              backdrop-blur-2xl
+      bg-white/5
+      backdrop-blur-2xl
 
-              shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+      shadow-[0_10px_60px_rgba(0,0,0,0.45)]
 
-              p-3
-              sm:p-4
-              lg:p-5
+      p-2.5
+      sm:p-4
+      lg:p-5
 
-              overflow-hidden
-            "
+      overflow-hidden
+    "
           >
             {/* INNER OVERLAY */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent"></div>
 
-            {/* HERO SIDE */}
-            <div
-              className="
-                w-full
-
-                /* MOBILE HEIGHT */
-                min-h-[520px]
-
-                /* TABLET */
-                md:min-h-[620px]
-
-                /* DESKTOP */
-                lg:min-h-0
-                lg:h-full
-                lg:w-[32%]
-                xl:w-[28%]
-
-                flex
-                items-center
-                justify-center
-              "
-            >
+            {/* MOBILE HEADER */}
+            <div className="block lg:hidden mb-2 shrink-0">
               <div
                 className="
-                  w-full
-                  h-full
-                  rounded-[24px]
-                  overflow-hidden
-                "
-              >
-                <Hero />
-              </div>
-            </div>
-
-            {/* RIGHT SIDE */}
-            <main
-              className="
-                w-full
-
-                /* DESKTOP WIDTH */
-                lg:w-[68%]
-                xl:w-[72%]
-
-                flex
-                flex-col
-                gap-2
-
-                /* FIX MOBILE OVERFLOW */
-                min-h-0
-              "
-            >
-              {/* HEADER */}
-              <div
-                className="
-                  rounded-2xl
-                  border
-                  border-white/10
-                  bg-white/[0.04]
-                  backdrop-blur-xl
-                  shadow-lg
-                  p-2
-                  shrink-0
-                "
+          rounded-2xl
+          border
+          border-white/10
+          bg-white/[0.04]
+          backdrop-blur-xl
+          shadow-lg
+          p-2
+        "
               >
                 <MianHeader />
               </div>
+            </div>
 
-              {/* CONTENT */}
+            {/* MAIN CONTENT */}
+            <div className="flex flex-col lg:flex-row gap-2.5 sm:gap-3 flex-1 min-h-0">
+
+              {/* HERO SIDE */}
               <div
                 className="
-                  flex-1
-                  h-full
+          w-full
 
-                  rounded-3xl
-                  border
-                  border-white/10
+          min-h-[450px]
+          sm:min-h-[520px]
+          md:min-h-[620px]
 
-                  bg-[#0f1b22]/70
-                  backdrop-blur-xl
+          lg:min-h-0
+          lg:h-full
+          lg:w-[32%]
+          xl:w-[28%]
 
-                  shadow-inner
-
-                  p-3
-                  sm:p-4
-                  md:p-5
-
-                  overflow-y-auto
-
-                  scrollbar-thin
-                  scrollbar-thumb-cyan-500/40
-                  scrollbar-track-transparent
-                "
+          flex
+          items-center
+          justify-center
+        "
               >
-                {children}
+                <div
+                  className="
+            w-full
+            h-full
+            rounded-[20px]
+            overflow-hidden
+          "
+                >
+                  <Hero />
+                </div>
               </div>
-            </main>
+
+              {/* RIGHT SIDE */}
+              <main
+                className="
+          w-full
+
+          lg:w-[68%]
+          xl:w-[72%]
+
+          flex
+          flex-col
+          gap-2.5
+
+          min-h-0
+        "
+              >
+                {/* DESKTOP HEADER */}
+                <div className="hidden lg:block shrink-0">
+                  <div
+                    className="
+              rounded-2xl
+              border
+              border-white/10
+              bg-white/[0.04]
+              backdrop-blur-xl
+              shadow-lg
+              p-2
+            "
+                  >
+                    <MianHeader />
+                  </div>
+                </div>
+
+                {/* CONTENT */}
+                <div
+                  className="
+            flex-1
+            h-full
+
+            rounded-3xl
+            border
+            border-white/10
+
+            bg-[#0f1b22]/70
+            backdrop-blur-xl
+
+            shadow-inner
+
+            p-3
+            sm:p-4
+            md:p-5
+
+            overflow-y-auto
+
+            scrollbar-thin
+            scrollbar-thumb-cyan-500/40
+            scrollbar-track-transparent
+          "
+                >
+                  {children}
+                </div>
+              </main>
+            </div>
           </section>
         </div>
       </body>

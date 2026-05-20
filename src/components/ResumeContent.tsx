@@ -30,13 +30,13 @@ const ResumeContent = () => {
         </div>
 
         {/* TIMELINE */}
-        <div className="flex-1 relative pl-6 scrollable overflow-y-auto">
+        <div className="flex-1 relative pl-6 scrollable overflow-x-hidden overflow-y-auto">
 
           {/* vertical line */}
           <div className="absolute left-2 top-0 bottom-0 w-[2px] bg-[#4fced5]/30"></div>
 
           <div className="flex flex-col gap-4 ">
-            {resumeData.map((item, idx) => (
+            {resumeData.reverse().map((item, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: 40 }}

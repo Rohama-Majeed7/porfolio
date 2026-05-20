@@ -169,6 +169,7 @@ const ProjectsContent: React.FC = () => {
                     bg-[#4fced5]
                     text-black
                     text-sm
+                    cusror-pointer
                     font-semibold
                     hover:scale-105
                     transition

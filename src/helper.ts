@@ -7,6 +7,7 @@ import {
   Code,
   Mail,
   LucideIcon,
+  Briefcase
 } from "lucide-react";
 import {
   FaHtml5,
@@ -45,7 +46,10 @@ export const navItems: NavItemProps[] = [
   { href: "/resume", icon: FileText, label: "Resume" },
   { href: "/projects", icon: FolderKanban, label: "Projects" },
   { href: "/skills", icon: Code, label: "Skills" },
+    { href: "/experience", icon: Briefcase, label: "Experience" },
+
   { href: "/contact", icon: Mail, label: "Contact" },
+
 ];
 
 // Skills Types
@@ -103,4 +107,33 @@ export const otherToolsData: SkillProps[] = [
   { name: "Postman", icon: SiPostman, color: "text-cyan-400" },
   { name: "VS Code", icon: VscVscode, color: "text-sky-400" },
   { name: "Canva", icon: SiCanva, color: "text-blue-400" },
+];
+
+export const experiences = [
+  {
+    title: "Full Stack Developer & Q/A Engineer",
+    company: "Celerity Global",
+    duration: "7 Months - Present",
+    desc: "Working as a Full Stack Developer and QA Engineer, building scalable web apps and testing features across the platform.",
+  },
+  {
+    title: "Senior Executive Member (Tech Ops Team)",
+    company: "MLSA UET Taxila",
+    duration: "2022 - 2025",
+    desc: "Developed website for MLSA UET Taxila, assisted juniors in modern web technologies, and organized tech events.",
+  },
+  {
+    title: "Front-End Development Intern",
+    company: "SkillyZone, Peshawar",
+    duration: "July 2024 - Aug 2024",
+    desc: "Built responsive web applications using React, Tailwind, and TypeScript. Developed scalable UI components.",
+    certificate: "https://drive.google.com/file/d/1Cua2Emq19JtN78MgWOzAUnOUxjwyI7Bq/view?usp=sharing",
+  },
+  {
+    title: "Web Development Intern",
+    company: "NIC, Taxila",
+    duration: "Oct 2023 - Apr 2024",
+    desc: "Developed a website for their startup using modern frontend technologies.",
+    certificate: "https://drive.google.com/file/d/187TXWjPf8DS6LKdh0d-HMNNGOZ81C_QW/view?usp=sharing",
+  },
 ];
