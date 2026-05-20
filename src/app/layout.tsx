@@ -34,10 +34,11 @@ export default function RootLayout({
           ${geistSans.variable}
           ${geistMono.variable}
           antialiased
+          h-screen
+          sm:py-
       overflow-x-hidden
       sm:overflow-y-hidden
       overflow-y-scroll
-          
           bg-[#07141b]
         `}
       >
@@ -46,7 +47,7 @@ export default function RootLayout({
         <div className="absolute bottom-[-120px] right-[-120px] h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-3xl" />
 
         {/* WRAPPER */}
-        <div className="relative z-10 flex h-full items-center justify-center p-2">
+        <div className="relative z-10 flex mx-auto h-full items-center justify-center p-2">
 
           <section
             className="
