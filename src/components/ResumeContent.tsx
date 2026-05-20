@@ -79,7 +79,7 @@ const ResumeContent = () => {
         {/* BUTTON */}
         <div className="flex justify-center">
           <Link
-            href="/myResume/Rohama-Majeed(SE).pdf"
+            href="/myResume/Rohama-Majeed.pdf"
             target="_blank"
             className="
               px-6 py-2.5

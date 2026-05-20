@@ -119,7 +119,7 @@ const Hero = () => {
 
         {/* Resume */}
         <Link
-          href="/myResume/Rohama-Majeed(SE).pdf"
+          href="/myResume/Rohama-Majeed.pdf"
           target="_blank"
           className="
             mt-5
