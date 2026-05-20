@@ -35,11 +35,12 @@ export default function RootLayout({
           ${geistMono.variable}
           antialiased
           h-screen
-          sm:py-
       overflow-x-hidden
       sm:overflow-y-hidden
       overflow-y-scroll
           bg-[#07141b]
+
+
         `}
       >
         {/* BACKGROUND */}
@@ -47,18 +48,21 @@ export default function RootLayout({
         <div className="absolute bottom-[-120px] right-[-120px] h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-3xl" />
 
         {/* WRAPPER */}
-        <div className="relative z-10 flex mx-auto h-full items-center justify-center p-2">
+        <div className="relative z-10 flex  h-full items-center  justify-center sm:p-2">
 
           <section
             className="
-              w-full max-w-[1250px]
+              w-full 
+              max-w-[1200px]
               h-full
+              max-h-[90vh]
               flex flex-col lg:flex-row
-              bg-white/5
-              border border-white/10
-              rounded-[20px]
+              md:bg-white/5
+              md:border 
+              md:border-white/10
+              md:rounded-[20px]
               
-              shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+              md:shadow-[0_10px_60px_rgba(0,0,0,0.45)]
             "
           >
 
@@ -68,7 +72,7 @@ export default function RootLayout({
             <div className="w-full lg:w-[32%] flex flex-col ">
 
               {/* MOBILE HEADER (ONLY MOBILE/TABLET) */}
-              <div className="lg:hidden bg-[#0f1b22] border-b border-white/10 p-2 shrink-0">
+              <div className="lg:hidden  p-2 shrink-0">
                 <MianHeader />
               </div>
 
@@ -89,7 +93,7 @@ export default function RootLayout({
               </div>
 
               {/* CONTENT */}
-              <div className="flex-1 overflow-y-auto scrollable p-3 sm:p-4 md:p-5">
+              <div className="flex-1 overflow-y-auto w-full scrollable p-3 sm:p-4 md:p-5">
                 {children}
               </div>
 

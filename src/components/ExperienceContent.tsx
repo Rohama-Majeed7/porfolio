@@ -8,8 +8,11 @@ import { experiences } from "@/helper";
 
 const ExperienceContent = () => {
   return (
-    <section className="bg-[#26333a] border border-[#4fced5]  sm:rounded-lg p-3 h-full overflow-x-hidden scrollable">
-      
+    <section className="bg-[#26333a] rounded-2xl
+        bg-[#1b262c]
+        border border-[#4fced5]/40
+        shadow-[0_0_15px_rgba(79,206,213,0.15)] p-3 h-full overflow-x-hidden scrollable">
+
       {/* Heading */}
       <div className="mb-6">
         <h2 className="text-2xl font-extrabold text-white">
@@ -35,7 +38,7 @@ const ExperienceContent = () => {
 
             {/* CARD */}
             <div className="bg-[#1a2328] p-4 rounded-xl border border-[#4fced5]/30 shadow-md hover:shadow-[#4fced5]/30 transition-all">
-              
+
               <h3 className="text-[#4fced5] font-bold text-lg">
                 {exp.title}
               </h3>

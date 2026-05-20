@@ -48,7 +48,7 @@ const Hero = () => {
           src="/mern.png"
           height={200}
           width={800}
-          className="h-[150px] sm:h-[170px] w-full object-cover opacity-70"
+          className="h-[150px] sm:h-[170px] sm:block hidden w-full object-cover opacity-70"
           alt="mern"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-[#0f1720]" />
@@ -61,7 +61,7 @@ const Hero = () => {
         transition={{ delay: 0.3 }}
         className="absolute left-1/2 top-[90px] sm:top-[110px] -translate-x-1/2"
       >
-        <div className="relative">
+        <div className="relative sm:block hidden">
           <div className="absolute inset-0 rounded-full bg-[#50ced6] blur-lg opacity-40"></div>
 
           <Image
@@ -75,7 +75,7 @@ const Hero = () => {
       </motion.div>
 
       {/* Content */}
-      <div className="mt-[55px] sm:mt-[75px] flex flex-col items-center px-4 pb-5 text-center">
+      <div className="mt-2 sm:mt-[75px] flex flex-col items-center px-4 pb-5 text-center">
         
         {/* Name */}
         <h1 className="text-xl sm:text-2xl font-bold text-white">
