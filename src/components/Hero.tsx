@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Mail,
-  Phone,
   Linkedin,
   Github,
   FileUser,
@@ -13,10 +12,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import BlinkText from "./BlinkText";
+import { FaWhatsapp } from "react-icons/fa";
 
 const socialLinks = [
   { icon: <Mail size={18} />, href: "mailto:rohamamajeed4@gmail.com" },
-  { icon: <Phone size={18} />, href: "tel:+923250336309" },
+  { icon: <FaWhatsapp size={18} />, href: "https://wa.me/923250336309" },
   { icon: <Linkedin size={18} />, href: "https://linkedin.com/in/rohama-majeed-213124282" },
   { icon: <Github size={18} />, href: "https://github.com/Rohama-Majeed7" },
 ];

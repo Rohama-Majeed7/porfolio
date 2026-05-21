@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Send, Linkedin, Github } from "lucide-react";
+import { Mail, Phone, Send, Linkedin, Github, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 
@@ -16,7 +16,9 @@ const ContactContent = () => {
     message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
@@ -51,7 +53,7 @@ const ContactContent = () => {
       <motion.main
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col h-full p-3 sm:p-4 gap-3"
+        className="flex flex-col h-full p-3 sm:p-5 gap-5"
       >
         {/* HEADER */}
         <div>
@@ -61,71 +63,109 @@ const ContactContent = () => {
           <div className="h-1 w-16 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
 
-        {/* FORM */}
-        <div className="flex-1 flex items-center justify-center">
-          <form
-            onSubmit={handleSubmit}
-            className="w-full max-w-lg space-y-3 bg-white/5 border border-white/10 rounded-2xl p-4 shadow-md"
-          >
-            <input
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none"
-            />
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 flex-1">
 
-            <input
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none"
-            />
+          {/* LEFT CARD - CONTACT INFO */}
+          <div className="space-y-4">
 
-            <textarea
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              rows={3}
-              placeholder="Your Message"
-              className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none resize-none"
-            />
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#4fced5] text-black font-semibold hover:scale-105 transition"
-            >
-              <Send size={18} />
-              {loading ? "Sending..." : "Send Message"}
-            </button>
-
-            {success && (
-              <p className="text-green-400 text-center text-sm">
-                Message sent successfully ✅
+            {/* Email Card */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:border-[#4fced5]/50 transition">
+              <div className="flex items-center gap-2 text-[#4fced5] font-semibold">
+                <Mail size={18} />
+                Email
+              </div>
+              <p className="text-white text-sm mt-2">
+                rohamamajeed4@gmail.com
               </p>
-            )}
+            </div>
 
-            {/* SOCIALS */}
-            <div className="flex justify-center gap-3 pt-2">
+            {/* Phone / WhatsApp Card */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-4 hover:border-[#4fced5]/50 transition">
+              <div className="flex items-center gap-2 text-[#4fced5] font-semibold">
+                <Phone size={18} />
+                Phone / WhatsApp
+              </div>
+              <p className="text-white text-sm mt-2">
+                +92 325 0336309
+              </p>
+
+              {/* WhatsApp Button */}
+              <Link
+                href="https://wa.me/923250336309?text=Hello%20I%20want%20to%20connect"
+                target="_blank"
+                className="mt-3 inline-flex items-center gap-2 text-sm bg-green-500 hover:bg-green-600 text-white px-3 py-1.5 rounded-lg transition"
+              >
+                <MessageCircle size={16} />
+                WhatsApp Me
+              </Link>
+            </div>
+
+            {/* SOCIAL */}
+            <div className="flex gap-3 hidden lg:flex">
               {[
-                { icon: <Mail size={18} />, href: "mailto:rohamamajeed4@gmail.com" },
-                { icon: <Phone size={18} />, href: "tel:+923250336309" },
-                { icon: <Linkedin size={18} />, href: "https://linkedin.com/in/rohama-majeed-213124282" },
-                { icon: <Github size={18} />, href: "https://github.com/Rohama-Majeed7" },
+                { icon: <Linkedin size={18} />, href: "https://linkedin.com" },
+                { icon: <Github size={18} />, href: "https://github.com" },
               ].map((item, i) => (
                 <Link
                   key={i}
                   href={item.href}
                   target="_blank"
-                  className="h-9 w-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-[#4fced5] hover:text-black transition"
+                  className="h-10 w-10 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-[#4fced5] hover:text-black transition"
                 >
                   {item.icon}
                 </Link>
               ))}
             </div>
-          </form>
+          </div>
+
+          {/* CENTER - FORM */}
+          <div className=" flex justify-center">
+            <form
+              onSubmit={handleSubmit}
+              className="w-full h-fit max-w-xl space-y-3 bg-white/5 border border-white/10 rounded-2xl p-5 shadow-md"
+            >
+              <input
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none"
+              />
+
+              <input
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none"
+              />
+
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows={4}
+                placeholder="Your Message"
+                className="w-full p-2.5 rounded-xl bg-black/20 text-white border border-white/10 focus:border-[#4fced5] outline-none resize-none"
+              />
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-[#4fced5] text-black font-semibold hover:scale-[1.02] transition"
+              >
+                <Send size={18} />
+                {loading ? "Sending..." : "Send Message"}
+              </button>
+
+              {success && (
+                <p className="text-green-400 text-center text-sm">
+                  Message sent successfully ✅
+                </p>
+              )}
+            </form>
+          </div>
         </div>
       </motion.main>
     </section>
