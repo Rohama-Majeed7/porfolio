@@ -56,6 +56,8 @@ export default function RootLayout({
 
             min-h-screen
             lg:h-[95vh]
+bg-[#1b262c]/90
+backdrop-blur-md
 
             flex
             flex-col

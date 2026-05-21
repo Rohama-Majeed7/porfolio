@@ -79,7 +79,7 @@ const ResumeContent = () => {
         {/* BUTTON */}
         <div className="flex justify-center">
           <Link
-            href="/Rohama-SE.pdf"
+            href="https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing"
             target="_blank"
             className="
               px-6 py-2.5
