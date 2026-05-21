@@ -46,6 +46,7 @@ const Hero = () => {
       <div className="relative">
         <Image
           src="/mern.png"
+          loading="eager"
           height={200}
           width={800}
           className="h-[150px] sm:h-[170px] sm:block hidden w-full object-cover opacity-70"
@@ -119,7 +120,7 @@ const Hero = () => {
 
         {/* Resume */}
         <Link
-          href="/myResume/Rohama-Majeed.pdf"
+          href="/Rohama-SE.pdf"
           target="_blank"
           className="
             mt-5

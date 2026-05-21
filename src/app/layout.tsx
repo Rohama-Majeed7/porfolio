@@ -34,74 +34,80 @@ export default function RootLayout({
           ${geistSans.variable}
           ${geistMono.variable}
           antialiased
-          h-screen
-      overflow-x-hidden
-      sm:overflow-y-hidden
-      overflow-y-scroll
+          min-h-screen
+          overflow-x-hidden
           bg-[#07141b]
-
-
+          lg:flex
+          lg:items-center
+          lg:justify-center
         `}
       >
-        {/* BACKGROUND */}
-        <div className="absolute top-[-120px] left-[-120px] h-[300px] w-[300px] rounded-full bg-cyan-400/20 blur-3xl" />
-        <div className="absolute bottom-[-120px] right-[-120px] h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-3xl" />
+        {/* BACKGROUND BLUR */}
+        <div className="fixed top-[-120px] left-[-120px] h-[300px] w-[300px] rounded-full bg-cyan-400/20 blur-3xl pointer-events-none" />
+        <div className="fixed bottom-[-120px] right-[-120px] h-[300px] w-[300px] rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
 
-        {/* WRAPPER */}
-        <div className="relative z-10 flex  h-full items-center  justify-center sm:p-2">
+        {/* MAIN CONTAINER */}
+        <section
+          className="
+            relative
+            w-screen
+            lg:w-full
+            max-w-[1200px]
 
-          <section
-            className="
-              w-full 
-              max-w-[1200px]
-              h-full
-              max-h-[90vh]
-              flex flex-col lg:flex-row
-              md:bg-white/5
-              md:border 
-              md:border-white/10
-              md:rounded-[20px]
-              
-              md:shadow-[0_10px_60px_rgba(0,0,0,0.45)]
-            "
-          >
+            min-h-screen
+            lg:h-[95vh]
 
-            {/* ========================= */}
-            {/* LEFT SIDE (HERO + HEADER MOBILE) */}
-            {/* ========================= */}
-            <div className="w-full lg:w-[32%] flex flex-col ">
-
-              {/* MOBILE HEADER (ONLY MOBILE/TABLET) */}
-              <div className="lg:hidden  p-2 shrink-0">
-                <MianHeader />
-              </div>
-
-              {/* HERO (NO FIXED HEIGHT ❌ FIXED) */}
-              <div className="my-auto p-2">
-                <Hero />
-              </div>
+            flex
+            flex-col
+            lg:flex-row
+            md:border
+            md:border-white/10
+            md:rounded-[20px]
+            md:shadow-[0_10px_60px_rgba(0,0,0,0.45)]
+          "
+        >
+          {/* ========================= */}
+          {/* LEFT SIDE */}
+          {/* ========================= */}
+          <div className="w-full lg:w-[32%] flex flex-col">
+            {/* MOBILE HEADER */}
+            <div className="lg:hidden p-2 shrink-0">
+              <MianHeader />
             </div>
 
-            {/* ========================= */}
-            {/* RIGHT SIDE (DESKTOP HEADER + CONTENT) */}
-            {/* ========================= */}
-            <div className="w-full lg:w-[68%] h-full flex flex-col">
+            {/* HERO */}
+            <div className="p-2 lg:flex lg:m-auto lg:items-center">
+              <Hero />
+            </div>
+          </div>
 
-              {/* DESKTOP HEADER */}
-              <div className="hidden lg:block   p-2 shrink-0">
-                <MianHeader />
-              </div>
-
-              {/* CONTENT */}
-              <div className="flex-1 overflow-y-auto w-full scrollable p-3 sm:p-4 md:p-5">
-                {children}
-              </div>
-
+          {/* ========================= */}
+          {/* RIGHT SIDE */}
+          {/* ========================= */}
+          <div className="w-full lg:w-[68%] flex flex-col min-w-0">
+            {/* DESKTOP HEADER */}
+            <div className="hidden lg:block p-2 shrink-0">
+              <MianHeader />
             </div>
 
-          </section>
+            {/* PAGE CONTENT */}
+            <div
+              className="
+                flex-1
+                overflow-y-auto
+                overflow-x-hidden
+                scrollable
+                min-w-0
 
-        </div>
+                p-3
+                sm:p-4
+                md:p-5
+              "
+            >
+              {children}
+            </div>
+          </div>
+        </section>
       </body>
     </html>
   );
