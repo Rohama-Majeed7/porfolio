@@ -164,7 +164,7 @@ const projects: Project[] = [
   },
    {
     proImg: Prac8Img,
-    link: "https://vercel-frontend-k6z3.vercel.app/",
+    link: "https://my-posts-frontend.vercel.app",
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "🌟 Mern Full Stack project - Post Creation Website Project 🌟",
