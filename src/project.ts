@@ -170,14 +170,14 @@ const projects: Project[] = [
     desc: "🌟 Mern Full Stack project - Post Creation Website Project 🌟",
     projectType: "backend",
   },
-  {
-    proImg: Prac9Img,
-    link: "https://video-app-c7gf.vercel.app",
-    gitHub: "https://github.com/Rohama-Majeed7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Video Uplaoding App Website Project 🌟",
-    projectType: "backend",
-  },
+  // {
+  //   proImg: Prac9Img,
+  //   link: "https://video-app-c7gf.vercel.app",
+  //   gitHub: "https://github.com/Rohama-Majeed7",
+  //   linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+  //   desc: "🌟 Mern Full Stack project - Video Uplaoding App Website Project 🌟",
+  //   projectType: "backend",
+  // },
   {
     proImg: Prac10Img,
     link: "https://job-post-1rn4.vercel.app/",
@@ -188,7 +188,7 @@ const projects: Project[] = [
   },
    {
     proImg: Prac11Img,
-    link: "#",
+    link: "https://chat-app-frontend-omega-two.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "🌟 Mern Full Stack project - Chat App Website Project 🌟",
