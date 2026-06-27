@@ -87,7 +87,7 @@ const Hero = () => {
 
               <div className="mt-5 grid grid-cols-3 gap-3">
                 <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#4fced5]">15+</h4>
+                  <h4 className="text-xl font-bold text-[#4fced5]">20+</h4>
                   <p className="text-xs text-white/60">Projects</p>
                 </div>
 
@@ -215,7 +215,7 @@ const Hero = () => {
 
               <div className="mt-5 grid grid-cols-3 gap-3">
                 <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#4fced5]">15+</h4>
+                  <h4 className="text-xl font-bold text-[#4fced5]">20+</h4>
                   <p className="text-xs text-white/60">Projects</p>
                 </div>
 

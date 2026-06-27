@@ -79,18 +79,24 @@ const AboutContent = () => {
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.45, delay: 0.1 }}
-            className="relative hidden md:flex min-h-[430px] items-center justify-center overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#15232b] to-[#081114] sm:p-6 p-2lo shadow-[0_0_35px_rgba(79,206,213,0.12)]"
+            className="hidden md:flex items-center justify-center"
           >
-            <div className="absolute -right-12 -top-12 h-36 w-36 rounded-full bg-[#4fced5]/20 blur-3xl" />
-            <div className="absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-[#4fced5]/10 blur-3xl" />
+            <div className="relative flex items-center justify-center">
+              {/* Gradient glow behind image */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#4fced5] via-cyan-300 to-[#1bffff] opacity-35 blur-3xl scale-110" />
 
-            <div className="relative flex h-full w-full items-center justify-center rounded-3xl border border-white/10 bg-black/20 sm:p-4 p-2">
-              <Image
-                src={myImg}
-                alt="Rohama Majeed"
-                className="max-h-[200px] w-auto object-cover"
-                priority
-              />
+              {/* Extra soft outer shadow */}
+              <div className="absolute inset-0 rounded-full bg-[#4fced5]/30 blur-2xl scale-105" />
+
+              {/* Image wrapper */}
+              <div className="relative rounded-full bg-gradient-to-tr from-[#4fced5] via-white/30 to-[#4fced5] p-[3px] shadow-[0_0_45px_rgba(79,206,213,0.35)]">
+                <Image
+                  src={myImg}
+                  alt="Rohama Majeed"
+                  className="h-[400px] w-[400px] rounded-full border-2 border-[#0f1720] object-cover"
+                  priority
+                />
+              </div>
             </div>
           </motion.div>
 

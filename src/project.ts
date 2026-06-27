@@ -14,6 +14,12 @@ import Prac13Img from "@/projects/waether-dashboard.png";
 import Prac14Img from "@/projects/spotify-clone.png";
 import Prac15Img from "@/projects/chatbot.png";
 import Prac16Img from "@/projects/blog-app.png";
+import Prac3 from "@/projects/prac3.png"
+import Prac4 from "@/projects/prac4.png"
+import Prac1 from "@/projects/prac1.png"
+import Prac2 from "@/projects/prac2.png"
+import Prac5 from "@/projects/prac5.png"
+import Prac6 from "@/projects/prac6.png"
 
 import type { StaticImageData } from "next/image";
 
@@ -41,7 +47,7 @@ const projects: Project[] = [
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "A MERN stack e-commerce application with product browsing, cart flow, authentication, and responsive UI for online shopping.",
     projectType: "fullstack",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS","Stripe"],
     features: [
       "Product listing and detail pages",
       "Cart management",
@@ -58,7 +64,7 @@ const projects: Project[] = [
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "A full stack blog platform where users can create, view, and manage posts with a clean and modern interface.",
     projectType: "fullstack",
-    techStack: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
+    techStack: ["Next.js","Typescript", "Prisma", "Postgres", "Vercel","Supabase"],
     features: [
       "Create and manage blog posts",
       "Clean content layout",
@@ -92,7 +98,7 @@ const projects: Project[] = [
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "A full stack job posting application where users can create and browse job posts with a professional dashboard-style layout.",
     projectType: "fullstack",
-    techStack: ["React", "Node.js", "Express", "MongoDB"],
+    techStack: ["Next.js", "Prisma", "Postgres", "Supabase"],
     features: [
       "Job post creation",
       "Job listing page",
@@ -246,7 +252,7 @@ const projects: Project[] = [
       "Informational website design",
     ],
   },
-  {
+   {
     title: "Begum Noor Memorial Hospital Website",
     proImg: BNoorImg,
     link: "https://rohama-majeed7.github.io/Bin-Qutab-Foundation/",
@@ -262,6 +268,88 @@ const projects: Project[] = [
       "Responsive sections",
     ],
   },
+   {
+    title: "Dashboard Clone",
+    proImg: Prac4,
+    link: "https://rohama-majeed7.github.io/project11/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "Cloned the dashboard for the client on fiver",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Cloned Dsahboard",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+  {
+    title: "Nuss Website",
+    proImg: Prac3,
+    link: "https://rohama-majeed7.github.io/project10/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "Cloned the Nuss website for the client on fiver",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Cloned Nuss Website",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+   {
+    title: "Bored ape yacht club Dashboard",
+    proImg: Prac1,
+    link: "https://rohama-majeed7.github.io/project7/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "Build the frontend dashboard for the client on fiver",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Frontend Dashboard",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+  
+  {
+    title: "Airmoto Website",
+    proImg: Prac2,
+    link: "https://rohama-majeed7.github.io/project4/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "I have cloned the Airmoto website for the client on fiver",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Cloned Airmoto Website",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+  {
+    title: "Cloned Website",
+    proImg: Prac5,
+    link: "https://rohama-majeed7.github.io/Blog/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "I have cloned the clothe rating website for the client on fiver",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Cloned Website",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+ 
   {
     title: "Nike Landing Page",
     proImg: NikeImg,
