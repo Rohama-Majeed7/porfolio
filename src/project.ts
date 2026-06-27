@@ -21,7 +21,7 @@ import Prac12Img from "@/projects/product-landing-page.png";
 import Prac13Img from "@/projects/waether-dashboard.png";
 import Prac14Img from "@/projects/spotify-clone.png";
 import Prac15Img from "@/projects/chatbot.png";
-
+import Prac16Img from "@/projects/blog-app.png"
 import type { StaticImageData } from "next/image";
 
 export interface Project {
@@ -192,6 +192,14 @@ const projects: Project[] = [
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
     desc: "🌟 Mern Full Stack project - Chat App Website Project 🌟",
+    projectType: "backend",
+  },
+  {
+    proImg: Prac16Img,
+    link: "https://blog-app-five-mu-20.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "🌟 Mern Full Stack project - Blog App Website Project 🌟",
     projectType: "backend",
   },
   {
