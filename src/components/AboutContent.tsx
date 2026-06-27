@@ -60,9 +60,9 @@ const AboutContent = () => {
       >
         {/* Heading */}
         <div className="mb-8 text-center">
-          <p className="mb-2 font-semibold text-[#4fced5]">About Me</p>
+          <p className="mb-2 font-semibold text-xl text-[#4fced5]">About Me</p>
 
-          <h1 className="text-3xl font-bold md:text-5xl">
+          <h1 className="sm:text-3xl text-2xl font-bold md:text-5xl">
             Get to Know Me Better
           </h1>
 

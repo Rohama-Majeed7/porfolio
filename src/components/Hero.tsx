@@ -46,7 +46,65 @@ const Hero = () => {
       <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#4fced5]/20 blur-[80px]" />
       <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-[#4fced5]/10 blur-[90px]" />
 
-      <div className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+      <div className="relative  grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, delay: 0.1 }}
+          className="relative mx-auto w-full max-w-sm sm:hidden"
+        >
+          <div className="relative overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116] sm:p-5 p-2 shadow-[0_0_30px_rgba(79,206,213,0.15)]">
+            <div className="absolute inset-x-0 top-0 h-28 bg-[#4fced5]/10 blur-3xl" />
+
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+              <Image
+                src="/mern.png"
+                alt="MERN stack"
+                width={500}
+                height={180}
+                className="h-32 w-full object-cover opacity-70"
+                priority
+              />
+            </div>
+
+            <div className="relative -mt-12 flex justify-center">
+              <Image
+                src="/my2img.png"
+                alt="Rohama Majeed"
+                width={115}
+                height={115}
+                className="rounded-full border-4 border-[#4fced5] bg-[#0f1720] shadow-xl"
+                priority
+              />
+            </div>
+
+            <div className="relative mt-4 text-center">
+              <h3 className="text-xl font-bold">Rohama Majeed</h3>
+              <p className="mt-1 text-sm text-[#4fced5]">
+                Full Stack Developer
+              </p>
+
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">15+</h4>
+                  <p className="text-xs text-white/60">Projects</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">2+</h4>
+                  <p className="text-xs text-white/60">Internships</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">7+</h4>
+                  <p className="text-xs text-white/60">Months</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -67,16 +125,13 @@ const Hero = () => {
           </h2>
 
           <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
-            I build responsive, scalable, and user-friendly web applications
-            using React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma,
-            and modern UI tools. I also have QA experience, which helps me
-            deliver cleaner and more reliable software.
-          </p>
+            Full Stack MERN Developer building responsive, scalable, and reliable web
+            applications with modern technologies.
+          </p> 
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/55">
-            Open to Junior Full Stack Developer, MERN Stack Developer, Frontend
-            Developer, and QA Engineer roles.
-          </p>
+          {/* <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/55">
+            Open to Full Stack, Frontend, MERN Stack, and QA opportunities.
+          </p>  */}
 
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
@@ -125,7 +180,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="relative mx-auto w-full max-w-sm"
+          className="relative mx-auto w-full max-w-sm hidden sm:block"
         >
           <div className="relative overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116] sm:p-5 p-2 shadow-[0_0_30px_rgba(79,206,213,0.15)]">
             <div className="absolute inset-x-0 top-0 h-28 bg-[#4fced5]/10 blur-3xl" />

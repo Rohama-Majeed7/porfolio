@@ -82,7 +82,7 @@ const ResumeContent = () => {
                       </span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-white sm:text-xl">
+                    <h3 className="text-sm font-bold text-white sm:text-xl">
                       {item.title}
                     </h3>
 
