@@ -105,9 +105,9 @@ const AboutContent = () => {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: 0.15 }}
-            className="flex min-h-[430px] flex-col justify-center rounded-3xl border border-white/10 bg-white/[0.04] sm:p-6 p-2.5 shadow-[0_0_30px_rgba(79,206,213,0.08)] backdrop-blur-xl md:p-8"
+            className="flex min-h-[430px] flex-col justify-center rounded-3xl border border-white/10 bg-white/[0.04] sm:p-4 p-2.5 shadow-[0_0_30px_rgba(79,206,213,0.08)] backdrop-blur-xl md:p-8"
           >
-            <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#4fced5]/30 bg-[#4fced5]/10 sm:px-4 px-2 py-2 text-sm text-[#4fced5]">
+            <div className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-[#4fced5]/30 bg-[#4fced5]/10 sm:px-3 px-2 py-2 text-sm text-[#4fced5]">
               <Sparkles size={16} />
               Developer Profile
             </div>
@@ -117,20 +117,20 @@ const AboutContent = () => {
               functionality.
             </h2>
 
-            <p className="mt-4 leading-relaxed text-white/70">
+            <p className="mt-2 leading-relaxed text-white/70">
               I’m Rohama Majeed, a Full Stack Developer experienced in React,
               Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and API
               integration.
             </p>
 
-            <p className="mt-3 leading-relaxed text-white/70">
+            <p className="mt-2 leading-relaxed text-white/70">
               I have worked on dashboards, LMS platforms, authentication
               systems, admin panels, chat apps, blogs, e-commerce apps, and
               full-stack CRUD applications.
             </p>
 
             {/* Highlights */}
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            {/* <div className="mt-5 grid gap-3 sm:grid-cols-2">
               {highlights.map((item) => (
                 <div
                   key={item}
@@ -143,7 +143,7 @@ const AboutContent = () => {
                   <span className="text-sm text-white/70">{item}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* Buttons */}
             <div className="mt-6 flex flex-wrap gap-3">
