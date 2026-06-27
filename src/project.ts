@@ -4,235 +4,295 @@ import CartImg from "@/projects/cart.png";
 import EcommerceImg from "@/projects/ecommerce.png";
 import GeminiImg from "@/projects/Gemini.png";
 import NikeImg from "@/projects/nike.png";
-import LoginImg from "@/projects/login.png";
-import MenuImg from "@/projects/menu.png";
 import TravelImg from "@/projects/travel.png";
-import Prac1Img from "@/projects/prac1.png";
-import Prac2Img from "@/projects/prac2.png";
-import Prac3Img from "@/projects/prac3.png";
-import Prac4Img from "@/projects/prac4.png";
-import Prac6Img from "@/projects/prac6.png";
 import Prac7Img from "@/projects/ecommerce-stack.png";
 import Prac8Img from "@/projects/post-creation.png";
-import Prac9Img from "@/projects/videoApp-next.png";
 import Prac10Img from "@/projects/job-post-App.png";
 import Prac11Img from "@/projects/chatApp.png";
 import Prac12Img from "@/projects/product-landing-page.png";
 import Prac13Img from "@/projects/waether-dashboard.png";
 import Prac14Img from "@/projects/spotify-clone.png";
 import Prac15Img from "@/projects/chatbot.png";
-import Prac16Img from "@/projects/blog-app.png"
+import Prac16Img from "@/projects/blog-app.png";
+
 import type { StaticImageData } from "next/image";
 
+export type ProjectType = "frontend" | "fullstack" | "client" | "practice";
+
 export interface Project {
+  title: string;
   proImg: string | StaticImageData;
   link: string;
   gitHub: string;
   linkedIn: string;
   desc: string;
-  projectType: "practical" | "frontend" | "backend";
+  projectType: ProjectType;
+  techStack: string[];
+  features: string[];
+  featured?: boolean;
 }
 
 const projects: Project[] = [
   {
-    proImg: BinQutabImg,
-    link: "https://rohama-majeed7.github.io/Bin-Qutab-Foundation/",
-    gitHub: "https://github.com/Rohama-Majeed7/Bin-Qutab-Foundation",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Excited to share my project with the Bin Qutub Foundation. Grateful for this experience and looking forward to more such meaningful collaborations!",
-    projectType: "practical",
-  },
-  {
-    proImg: BNoorImg,
-    link: "https://rohama-majeed7.github.io/Bin-Qutab-Foundation/",
-    gitHub: "https://github.com/Rohama-Majeed7/Bin-Qutab-Foundation",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Excited to share my project with the Bin Qutub Foundation for their Begum Noor Memorial Hospital.",
-    projectType: "practical",
-  },
-  {
-    proImg: CartImg,
-    link: "https://lambent-gnome-0cbe3e.netlify.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/Add_To_Cart",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Add to Cart functionality using React, Tailwind, Redux, and Redux Toolkit.",
-    projectType: "frontend",
-  },
-  {
-    proImg: EcommerceImg,
-    link: "https://e-commerce156.netlify.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/ecommerce-site",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "A basic e-commerce frontend made with HTML, CSS, and JavaScript.",
-    projectType: "frontend",
-  },
-  {
-    proImg: GeminiImg,
-    link: "https://radiant-caramel-1f7894.netlify.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/ecommerce-site",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Responsive Gemini Site using React Context API and Tailwind CSS.",
-    projectType: "frontend",
-  },
-  {
-    proImg: NikeImg,
-    link: "https://aquamarine-profiterole-872fea.netlify.app/",
-    gitHub: "nolink",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Nike landing page clone using Tailwind CSS and Vite.",
-    projectType: "frontend",
-  },
-  {
-    proImg: LoginImg,
-    link: "https://verdant-tapioca-72a0b5.netlify.app/",
-    gitHub: "nolink",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Login form with React, Tailwind and localStorage for storing user data.",
-    projectType: "frontend",
-  },
-  {
-    proImg: LoginImg,
-    link: "https://verdant-tapioca-72a0b5.netlify.app/",
-    gitHub: "nolink",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Login form with React, Tailwind and localStorage (duplicate project).",
-    projectType: "frontend",
-  },
-  {
-    proImg: MenuImg,
-    link: "https://lnkd.in/gAWSBVFq",
-    gitHub: "https://github.com/Rohama-Majeed7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Filter menu created with React.",
-    projectType: "frontend",
-  },
-  {
-    proImg: TravelImg,
-    link: "https://luxury-pastelito-6dddb1.netlify.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/Travel",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "Travel site using React, Tailwind, and Swiper.js.",
-    projectType: "frontend",
-  },
-  {
-    proImg: Prac1Img,
-    link: "https://rohama-majeed7.github.io/project7/",
-    gitHub: "https://github.com/Rohama-Majeed7/project7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Practical project - project 7 🌟",
-    projectType: "practical",
-  },
-  {
-    proImg: Prac2Img,
-    link: "https://rohama-majeed7.github.io/Project4/",
-    gitHub: "https://github.com/Rohama-Majeed7/Project4",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Practical project - project 4 🌟",
-    projectType: "practical",
-  },
-  {
-    proImg: Prac3Img,
-    link: "https://rohama-majeed7.github.io/project10/",
-    gitHub: "https://github.com/Rohama-Majeed7/project10",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Practical project - project 10 🌟",
-    projectType: "practical",
-  },
-  {
-    proImg: Prac4Img,
-    link: "https://rohama-majeed7.github.io/project11/",
-    gitHub: "https://github.com/Rohama-Majeed7/project11",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Practical project - project 11 🌟",
-    projectType: "practical",
-  },
-  {
-    proImg: Prac6Img,
-    link: "https://rohama-majeed7.github.io/project5/",
-    gitHub: "https://github.com/Rohama-Majeed7/project5",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Practical project - project 5 🌟",
-    projectType: "practical",
-  },
-    {
+    title: "Full Stack E-Commerce Platform",
     proImg: Prac7Img,
     link: "https://ecommerce-frontend-blond-five.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Ecommerce Website Project  🌟",
-    projectType: "backend",
-  },
-   {
-    proImg: Prac8Img,
-    link: "https://my-posts-frontend.vercel.app",
-    gitHub: "https://github.com/Rohama-Majeed7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Post Creation Website Project 🌟",
-    projectType: "backend",
-  },
-  // {
-  //   proImg: Prac9Img,
-  //   link: "https://video-app-c7gf.vercel.app",
-  //   gitHub: "https://github.com/Rohama-Majeed7",
-  //   linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-  //   desc: "🌟 Mern Full Stack project - Video Uplaoding App Website Project 🌟",
-  //   projectType: "backend",
-  // },
-  {
-    proImg: Prac10Img,
-    link: "https://job-post-1rn4.vercel.app/",
-    gitHub: "https://github.com/Rohama-Majeed7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Job Posting App Website Project 🌟",
-    projectType: "backend",
-  },
-   {
-    proImg: Prac11Img,
-    link: "https://chat-app-frontend-omega-two.vercel.app/",
-    gitHub: "https://github.com/Rohama-Majeed7",
-    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Chat App Website Project 🌟",
-    projectType: "backend",
+    desc: "A MERN stack e-commerce application with product browsing, cart flow, authentication, and responsive UI for online shopping.",
+    projectType: "fullstack",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
+    features: [
+      "Product listing and detail pages",
+      "Cart management",
+      "Authentication flow",
+      "Responsive frontend design",
+    ],
+    featured: true,
   },
   {
+    title: "Blog Application",
     proImg: Prac16Img,
     link: "https://blog-app-five-mu-20.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Mern Full Stack project - Blog App Website Project 🌟",
-    projectType: "backend",
+    desc: "A full stack blog platform where users can create, view, and manage posts with a clean and modern interface.",
+    projectType: "fullstack",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Vercel"],
+    features: [
+      "Create and manage blog posts",
+      "Clean content layout",
+      "API-based data handling",
+      "Mobile responsive UI",
+    ],
+    featured: true,
   },
   {
-    proImg: Prac12Img,
-    link: "https://smart-wtach-landing-page-yxyf.vercel.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/smartWtach-landing-page",
+    title: "Real-Time Chat App",
+    proImg: Prac11Img,
+    link: "https://chat-app-frontend-omega-two.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Frontend Internship project - Product-Landing-Page Website Project 🌟",
-    projectType: "frontend",
+    desc: "A MERN stack chat application focused on real-time communication, authentication, and user-friendly messaging experience.",
+    projectType: "fullstack",
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
+    features: [
+      "User authentication",
+      "Chat interface",
+      "Real-time messaging structure",
+      "Responsive design",
+    ],
+    featured: true,
   },
   {
-    proImg: Prac13Img,
-    link: "https://weather-dashboard-ten-rust.vercel.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/weather-dashboard",
+    title: "Job Posting Platform",
+    proImg: Prac10Img,
+    link: "https://job-post-1rn4.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Frontend Internship project - Weather App Website Project 🌟",
-    projectType: "frontend",
+    desc: "A full stack job posting application where users can create and browse job posts with a professional dashboard-style layout.",
+    projectType: "fullstack",
+    techStack: ["React", "Node.js", "Express", "MongoDB"],
+    features: [
+      "Job post creation",
+      "Job listing page",
+      "Reusable UI components",
+      "API integration",
+    ],
+    featured: true,
   },
   {
-    proImg: Prac14Img,
-    link: "https://spotify-clone-topaz-nu.vercel.app/",
-    gitHub: "https://github.com/Rohama-Majeed7/spotify-clone",
+    title: "Post Creation App",
+    proImg: Prac8Img,
+    link: "https://my-posts-frontend.vercel.app",
+    gitHub: "https://github.com/Rohama-Majeed7",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Frontend Internship project - Spotify Clone Website Project 🌟",
-    projectType: "frontend",
+    desc: "A full stack post management app where users can create and view posts through a simple, clean, and responsive interface.",
+    projectType: "fullstack",
+    techStack: ["React", "Node.js", "Express", "MongoDB"],
+    features: [
+      "Post creation",
+      "Post listing",
+      "Backend API integration",
+      "Responsive layout",
+    ],
   },
-    {
+  {
+    title: "AI Chatbot Interface",
     proImg: Prac15Img,
     link: "https://chat-bot-gi5s.vercel.app/",
     gitHub: "https://github.com/Rohama-Majeed7/chat_bot",
     linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
-    desc: "🌟 Frontend  project - AI Chatbot Website Project 🌟",
+    desc: "A modern AI chatbot frontend with a clean conversation layout and responsive design.",
     projectType: "frontend",
+    techStack: ["React", "JavaScript", "Tailwind CSS"],
+    features: [
+      "Chat-style UI",
+      "Responsive layout",
+      "Modern frontend design",
+      "Clean component structure",
+    ],
+    featured: true,
+  },
+  {
+    title: "Weather Dashboard",
+    proImg: Prac13Img,
+    link: "https://weather-dashboard-ten-rust.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/weather-dashboard",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive weather dashboard that displays weather-related information in a clean and easy-to-read UI.",
+    projectType: "frontend",
+    techStack: ["React", "TypeScript", "Tailwind CSS"],
+    features: [
+      "Weather dashboard layout",
+      "Responsive cards",
+      "Clean data presentation",
+      "Modern UI styling",
+    ],
+  },
+  {
+    title: "Product Landing Page",
+    proImg: Prac12Img,
+    link: "https://smart-wtach-landing-page-yxyf.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/smartWtach-landing-page",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A professional product landing page designed for a smart watch with strong visual hierarchy and responsive sections.",
+    projectType: "frontend",
+    techStack: ["React", "Tailwind CSS", "Vercel"],
+    features: [
+      "Hero section",
+      "Product feature sections",
+      "Responsive design",
+      "Call-to-action layout",
+    ],
+  },
+  {
+    title: "Spotify Clone",
+    proImg: Prac14Img,
+    link: "https://spotify-clone-topaz-nu.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/spotify-clone",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A Spotify-inspired frontend clone built to practice modern layout, spacing, and music app UI design.",
+    projectType: "frontend",
+    techStack: ["React", "Tailwind CSS"],
+    features: [
+      "Music app layout",
+      "Responsive design",
+      "Card-based UI",
+      "Frontend styling practice",
+    ],
+  },
+  {
+    title: "Travel Website",
+    proImg: TravelImg,
+    link: "https://luxury-pastelito-6dddb1.netlify.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/Travel",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive travel website built with modern frontend tools, including sliders and visually attractive travel sections.",
+    projectType: "frontend",
+    techStack: ["React", "Tailwind CSS", "Swiper.js"],
+    features: [
+      "Travel destination sections",
+      "Swiper slider",
+      "Responsive UI",
+      "Modern page design",
+    ],
+  },
+  {
+    title: "Add to Cart App",
+    proImg: CartImg,
+    link: "https://lambent-gnome-0cbe3e.netlify.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/Add_To_Cart",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A React shopping cart project built to practice state management, product handling, and Redux Toolkit.",
+    projectType: "frontend",
+    techStack: ["React", "Redux Toolkit", "Tailwind CSS"],
+    features: [
+      "Add to cart functionality",
+      "State management",
+      "Product card layout",
+      "Responsive UI",
+    ],
+  },
+  {
+    title: "Gemini UI Clone",
+    proImg: GeminiImg,
+    link: "https://radiant-caramel-1f7894.netlify.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive Gemini-inspired frontend UI built with React Context API and Tailwind CSS.",
+    projectType: "frontend",
+    techStack: ["React", "Context API", "Tailwind CSS"],
+    features: [
+      "Gemini-inspired interface",
+      "Context API usage",
+      "Responsive layout",
+      "Modern frontend styling",
+    ],
+  },
+  {
+    title: "Bin Qutab Foundation Website",
+    proImg: BinQutabImg,
+    link: "https://rohama-majeed7.github.io/Bin-Qutab-Foundation/",
+    gitHub: "https://github.com/Rohama-Majeed7/Bin-Qutab-Foundation",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A client-style foundation website created to present organization information, services, and social impact in a clean layout.",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Organization landing page",
+      "Clean sections",
+      "Responsive layout",
+      "Informational website design",
+    ],
+  },
+  {
+    title: "Begum Noor Memorial Hospital Website",
+    proImg: BNoorImg,
+    link: "https://rohama-majeed7.github.io/Bin-Qutab-Foundation/",
+    gitHub: "https://github.com/Rohama-Majeed7/Bin-Qutab-Foundation",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A hospital-related web page designed to present services and information in a simple, accessible format.",
+    projectType: "client",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Hospital information layout",
+      "Service presentation",
+      "Simple navigation",
+      "Responsive sections",
+    ],
+  },
+  {
+    title: "Nike Landing Page",
+    proImg: NikeImg,
+    link: "https://aquamarine-profiterole-872fea.netlify.app/",
+    gitHub: "",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A Nike-inspired landing page clone focused on visual design, product presentation, and frontend layout practice.",
+    projectType: "frontend",
+    techStack: ["React", "Vite", "Tailwind CSS"],
+    features: [
+      "Product hero section",
+      "Responsive layout",
+      "Modern landing page styling",
+      "Frontend design practice",
+    ],
+  },
+  {
+    title: "Basic E-Commerce Frontend",
+    proImg: EcommerceImg,
+    link: "https://e-commerce156.netlify.app/",
+    gitHub: "https://github.com/Rohama-Majeed7/ecommerce-site",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A basic e-commerce frontend built with HTML, CSS, and JavaScript to practice product layout and shopping UI.",
+    projectType: "practice",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    features: [
+      "Product layout",
+      "Basic shopping UI",
+      "Responsive structure",
+      "Frontend practice",
+    ],
   },
 ];
 

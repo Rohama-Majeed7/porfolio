@@ -2,145 +2,183 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  Mail,
-  Linkedin,
   Github,
+  Linkedin,
+  Mail,
   FileUser,
+  FolderKanban,
+  MessageCircle,
   Sparkles,
+  ArrowRight,
 } from "lucide-react";
-import Link from "next/link";
-import BlinkText from "./BlinkText";
 import { FaWhatsapp } from "react-icons/fa";
+import BlinkText from "./BlinkText";
 
 const socialLinks = [
-  { icon: <Mail size={18} />, href: "mailto:rohamamajeed4@gmail.com" },
-  { icon: <FaWhatsapp size={18} />, href: "https://wa.me/923250336309" },
-  { icon: <Linkedin size={18} />, href: "https://linkedin.com/in/rohama-majeed-213124282" },
-  { icon: <Github size={18} />, href: "https://github.com/Rohama-Majeed7" },
+  {
+    icon: <Mail size={18} />,
+    href: "mailto:rohamamajeed4@gmail.com",
+    label: "Email",
+  },
+  {
+    icon: <FaWhatsapp size={18} />,
+    href: "https://wa.me/923250336309",
+    label: "WhatsApp",
+  },
+  {
+    icon: <Linkedin size={18} />,
+    href: "https://linkedin.com/in/rohama-majeed-213124282",
+    label: "LinkedIn",
+  },
+  {
+    icon: <Github size={18} />,
+    href: "https://github.com/Rohama-Majeed7",
+    label: "GitHub",
+  },
 ];
 
 const Hero = () => {
   return (
-    <motion.section
-      id="home"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="
-        relative
-        h-full
-        rounded-3xl
-        border border-[#50ced6]/40
-        bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116]
-        shadow-[0_0_25px_rgba(80,206,214,0.2)]
-        backdrop-blur-xl
-        overflow-hidden
-      "
-    >
-      {/* Glow */}
-      <div className="absolute -top-12 -right-12 h-28 w-28 rounded-full bg-[#50ced6]/20 blur-2xl"></div>
+    <section className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] sm:p-5 p-3 shadow-[0_0_35px_rgba(79,206,213,0.1)] backdrop-blur-xl md:p-8 lg:p-10">
+      <div className="absolute -right-20 -top-20 h-56 w-56 rounded-full bg-[#4fced5]/20 blur-[80px]" />
+      <div className="absolute -bottom-24 -left-20 h-64 w-64 rounded-full bg-[#4fced5]/10 blur-[90px]" />
 
-      {/* Cover */}
-      <div className="relative">
-        <Image
-          src="/mern.png"
-          loading="eager"
-          height={200}
-          width={800}
-          className="h-[150px] sm:h-[170px] sm:block hidden w-full object-cover opacity-70"
-          alt="mern"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-[#0f1720]" />
-      </div>
-
-      {/* Profile */}
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ delay: 0.3 }}
-        className="absolute left-1/2 top-[90px] sm:top-[110px] -translate-x-1/2"
-      >
-        <div className="relative sm:block hidden">
-          <div className="absolute inset-0 rounded-full bg-[#50ced6] blur-lg opacity-40"></div>
-
-          <Image
-            src="/my2img.png"
-            height={100}
-            width={100}
-            alt="profile"
-            className="rounded-full border-4 border-[#50ced6] shadow-lg"
-          />
-        </div>
-      </motion.div>
-
-      {/* Content */}
-      <div className="mt-2 sm:mt-[75px] flex flex-col items-center px-4 pb-5 text-center">
-        
-        {/* Name */}
-        <h1 className="text-xl sm:text-2xl font-bold text-white">
-          Rohama Majeed
-        </h1>
-
-        {/* Role */}
-        <div className="flex items-center gap-2 text-[#50ced6] mt-1">
-          <Sparkles size={14} />
-          <BlinkText />
-        </div>
-
-        {/* Description */}
-        <p className="text-xs sm:text-sm text-gray-300 mt-2 leading-snug max-w-[220px]">
-          Full Stack Developer building modern web apps
-        </p>
-
-        {/* Social */}
-        <div className="mt-4 flex gap-3">
-          {socialLinks.map((item, i) => (
-            <Link
-              key={i}
-              href={item.href}
-              target="_blank"
-              className="
-                h-9 w-9
-                flex items-center justify-center
-                rounded-xl
-                bg-white/5
-                border border-white/10
-                text-white
-                hover:bg-[#50ced6]
-                hover:text-black
-                transition
-              "
-            >
-              {item.icon}
-            </Link>
-          ))}
-        </div>
-
-        {/* Resume */}
-        <Link
-          href="https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing"
-          target="_blank"
-          className="
-            mt-5
-            flex items-center gap-2
-            px-4 py-2
-            text-xs sm:text-sm
-            rounded-xl
-            border border-[#50ced6]/40
-            bg-[#50ced6]/10
-            text-[#50ced6]
-            hover:bg-[#50ced6]
-            hover:text-black
-            transition
-          "
+      <div className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
         >
-          <FileUser size={16} />
-          Resume
-        </Link>
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#4fced5]/30 bg-[#4fced5]/10 sm:px-4 px-2 py-2 text-sm text-[#4fced5]">
+            <Sparkles size={16} />
+            <BlinkText />
+          </div>
+
+          <h1 className="max-w-3xl sm:text-4xl text-2xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
+            Hi, I’m{" "}
+            <span className="text-[#4fced5]">Rohama Majeed</span>
+          </h1>
+
+          <h2 className="mt-4 text-xl font-semibold text-white/90 sm:text-2xl">
+            Full Stack MERN Developer
+          </h2>
+
+          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+            I build responsive, scalable, and user-friendly web applications
+            using React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma,
+            and modern UI tools. I also have QA experience, which helps me
+            deliver cleaner and more reliable software.
+          </p>
+
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/55">
+            Open to Junior Full Stack Developer, MERN Stack Developer, Frontend
+            Developer, and QA Engineer roles.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              href="/projects"
+              className="flex items-center gap-2 rounded-xl bg-[#4fced5] px-5 py-3 text-sm font-semibold text-black transition hover:scale-105"
+            >
+              <FolderKanban size={18} />
+              View Projects
+              <ArrowRight size={16} />
+            </Link>
+
+            <Link
+              href="https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing"
+              target="_blank"
+              className="flex items-center gap-2 rounded-xl border border-[#4fced5]/40 bg-[#4fced5]/10 px-5 py-3 text-sm font-semibold text-[#4fced5] transition hover:bg-[#4fced5] hover:text-black"
+            >
+              <FileUser size={18} />
+              Resume
+            </Link>
+
+            <Link
+              href="/contact"
+              className="flex items-center gap-2 rounded-xl border border-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
+            >
+              <MessageCircle size={18} />
+              Contact
+            </Link>
+          </div>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            {socialLinks.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                target="_blank"
+                aria-label={item.label}
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white transition hover:bg-[#4fced5] hover:text-black"
+              >
+                {item.icon}
+              </Link>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.55, delay: 0.1 }}
+          className="relative mx-auto w-full max-w-sm"
+        >
+          <div className="relative overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116] sm:p-5 p-2 shadow-[0_0_30px_rgba(79,206,213,0.15)]">
+            <div className="absolute inset-x-0 top-0 h-28 bg-[#4fced5]/10 blur-3xl" />
+
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/20">
+              <Image
+                src="/mern.png"
+                alt="MERN stack"
+                width={500}
+                height={180}
+                className="h-32 w-full object-cover opacity-70"
+                priority
+              />
+            </div>
+
+            <div className="relative -mt-12 flex justify-center">
+              <Image
+                src="/my2img.png"
+                alt="Rohama Majeed"
+                width={115}
+                height={115}
+                className="rounded-full border-4 border-[#4fced5] bg-[#0f1720] shadow-xl"
+                priority
+              />
+            </div>
+
+            <div className="relative mt-4 text-center">
+              <h3 className="text-xl font-bold">Rohama Majeed</h3>
+              <p className="mt-1 text-sm text-[#4fced5]">
+                Full Stack Developer
+              </p>
+
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">15+</h4>
+                  <p className="text-xs text-white/60">Projects</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">2+</h4>
+                  <p className="text-xs text-white/60">Internships</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 sm:p-3 p-2">
+                  <h4 className="text-xl font-bold text-[#4fced5]">7+</h4>
+                  <p className="text-xs text-white/60">Months</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

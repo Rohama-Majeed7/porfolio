@@ -37,13 +37,13 @@ const HomeSkills = () => {
           </p>
         </div>
 
-        {/* <Link
+        <Link
           href="/skills"
           className="flex w-fit items-center gap-2 rounded-xl border border-[#4fced5]/40 sm:px-4 px-2 py-2 text-sm font-semibold text-[#4fced5] transition hover:bg-[#4fced5] hover:text-black"
         >
           View Skills
           <ArrowRight size={16} />
-        </Link> */}
+        </Link>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">

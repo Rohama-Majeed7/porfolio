@@ -111,29 +111,31 @@ export const otherToolsData: SkillProps[] = [
 
 export const experiences = [
   {
-    title: "Full Stack Developer & Q/A Engineer",
+    title: "Full Stack Developer & QA Engineer",
     company: "Celerity Global",
     duration: "7 Months - Present",
-    desc: "Working as a Full Stack Developer and QA Engineer, building scalable web apps and testing features across the platform.",
+    desc: "Developing and maintaining responsive full-stack web features, creating reusable UI components, integrating APIs, testing platform features, reporting bugs, and collaborating with the team to deliver stable releases.",
   },
   {
-    title: "Senior Executive Member (Tech Ops Team)",
+    title: "Senior Executive Member — Tech Ops Team",
     company: "MLSA UET Taxila",
     duration: "2022 - 2025",
-    desc: "Developed website for MLSA UET Taxila, assisted juniors in modern web technologies, and organized tech events.",
+    desc: "Contributed to the MLSA UET Taxila website, supported juniors in learning modern web technologies, and helped organize technical events and community activities.",
   },
   {
     title: "Front-End Development Intern",
     company: "SkillyZone, Peshawar",
     duration: "July 2024 - Aug 2024",
-    desc: "Built responsive web applications using React, Tailwind, and TypeScript. Developed scalable UI components.",
-    certificate: "https://drive.google.com/file/d/1Cua2Emq19JtN78MgWOzAUnOUxjwyI7Bq/view?usp=sharing",
+    desc: "Built responsive web interfaces using React, Tailwind CSS, and TypeScript. Developed reusable UI components and improved frontend layout consistency.",
+    certificate:
+      "https://drive.google.com/file/d/1Cua2Emq19JtN78MgWOzAUnOUxjwyI7Bq/view?usp=sharing",
   },
   {
     title: "Web Development Intern",
     company: "NIC, Taxila",
     duration: "Oct 2023 - Apr 2024",
-    desc: "Developed a website for their startup using modern frontend technologies.",
-    certificate: "https://drive.google.com/file/d/187TXWjPf8DS6LKdh0d-HMNNGOZ81C_QW/view?usp=sharing",
+    desc: "Developed a startup website using modern frontend technologies with a focus on clean layout, responsiveness, and user-friendly page structure.",
+    certificate:
+      "https://drive.google.com/file/d/187TXWjPf8DS6LKdh0d-HMNNGOZ81C_QW/view?usp=sharing",
   },
 ];

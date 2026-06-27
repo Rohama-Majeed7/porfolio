@@ -1,189 +1,156 @@
 "use client";
 
 import React, { useState } from "react";
-import projectsData, { Project } from "@/project";
-import { FaAngleDown } from "react-icons/fa";
+import projectsData, { Project, ProjectType } from "@/project";
 import SingleProject from "@/components/SingleProject";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
+
+const filters: { label: string; value: "all" | ProjectType }[] = [
+  { label: "All", value: "all" },
+  { label: "Full Stack", value: "fullstack" },
+  { label: "Frontend", value: "frontend" },
+  { label: "Client Work", value: "client" },
+  { label: "Practice", value: "practice" },
+];
 
 const ProjectsContent: React.FC = () => {
-  const [project, setProject] = useState<Project[]>(projectsData);
-  const [showProject, setShowProject] = useState<boolean>(false);
+  const [activeFilter, setActiveFilter] = useState<"all" | ProjectType>("all");
+  const [showProject, setShowProject] = useState(false);
   const [singleProject, setSingleProject] = useState<Project | null>(null);
-  const [scale, setScale] = useState<boolean>(false);
-  const [label, setLabel] = useState<string>("All");
+  const [scale, setScale] = useState(false);
 
-  const allProjects = () => {
-    setLabel("All");
-    setProject(projectsData);
-  };
-
-  const filterProjects = (type: "practical" | "frontend" | "backend") => {
-    const newArray = projectsData.filter((pro) => pro.projectType === type);
-    setLabel(type);
-    setProject(newArray);
-  };
-
-  const filters = [
-    { label: "All", action: allProjects },
-    { label: "Frontend", action: () => filterProjects("frontend") },
-    { label: "Backend", action: () => filterProjects("backend") },
-    { label: "Practical", action: () => filterProjects("practical") },
-  ];
+  const filteredProjects =
+    activeFilter === "all"
+      ? projectsData
+      : projectsData.filter((project) => project.projectType === activeFilter);
 
   return (
-    <section
-      id="projects"
-      className="
-        h-full
-        w-full
-        rounded-2xl
-        bg-[#1b262c]
-        border border-[#4fced5]/40
-        shadow-[0_0_15px_rgba(79,206,213,0.15)]
-        overflow-hidden
-      "
-    >
-      <motion.main
-        initial={{ opacity: 0, y: 30 }}
+    <section className="min-h-screen sm:px-4 sm:py-8 px-2 py-4 text-white">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col h-full p-4 sm:p-6 gap-4"
+        transition={{ duration: 0.4 }}
+        className="max-w-6xl mx-auto"
       >
-        {/* HEADER */}
-        <div>
-          <p className="text-2xl font-bold text-white">
-            My <span className="text-[#4fced5]">Projects</span>
+        <div className="mb-8">
+          <p className="text-[#4fced5] font-semibold mb-2">My Work</p>
+          <h1 className="text-3xl md:text-5xl font-bold">Featured Projects</h1>
+          <p className="text-white/70 mt-4 max-w-2xl">
+            A selection of full-stack and frontend projects built with React,
+            Next.js, Node.js, MongoDB, TypeScript, and modern UI tools.
           </p>
-          <div className="h-1 w-20 bg-[#4fced5] rounded-full mt-1"></div>
         </div>
 
-        {/* FILTERS */}
-        <div className="flex flex-wrap gap-2 justify-center">
-          {filters.map((btn, idx) => (
-            <motion.button
-              key={idx}
-              onClick={btn.action}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="
-                px-4 py-2
-                text-sm
-                rounded-xl
-                border border-[#4fced5]/50
-                bg-white/5
-                text-white
-                hover:bg-[#4fced5]
-                hover:text-black
-                transition-all
-              "
+        <div className="flex flex-wrap gap-3 mb-8">
+          {filters.map((filter) => (
+            <button
+              key={filter.value}
+              onClick={() => setActiveFilter(filter.value)}
+              className={`sm:px-4 px-2 py-2 rounded-full border text-sm transition-all ${
+                activeFilter === filter.value
+                  ? "bg-[#4fced5] text-black border-[#4fced5]"
+                  : "bg-white/5 text-white/80 border-white/10 hover:border-[#4fced5] hover:text-[#4fced5]"
+              }`}
             >
-              {btn.label}
-            </motion.button>
+              {filter.label}
+            </button>
           ))}
         </div>
 
-        {/* LABEL */}
-        <h1 className="text-white text-sm font-semibold text-center tracking-wider">
-          Showing:{" "}
-          <span className="text-[#4fced5] uppercase">{label}</span>
-        </h1>
+        <p className="text-sm text-white/50 mb-6">
+          Showing {filteredProjects.length} project
+          {filteredProjects.length > 1 ? "s" : ""}
+        </p>
 
-        {/* PROJECT GRID */}
-        <motion.div
-          layout
-          className="
-            flex-1
-            overflow-y-auto
-            scrollable
-            grid
-            grid-cols-1
-            sm:grid-cols-2
-            lg:grid-cols-3
-            gap-4
-            pr-1
-          "
-        >
-          {project.map((pro, index) => (
-            <motion.div
-              key={index}
-              layout
-              whileHover={{ scale: 1.03 }}
-              className="
-                relative
-                h-[200px]
-                rounded-2xl
-                overflow-hidden
-
-                border border-white/10
-                bg-white/5
-
-                shadow-md
-                hover:shadow-[0_0_20px_rgba(79,206,213,0.25)]
-
-                cursor-pointer
-                group
-              "
+        <div className="grid sm:grid-cols-2 xl:grid-cols-3 gap-6">
+          {filteredProjects.map((project, index) => (
+            <motion.article
+              key={`${project.title}-${index}`}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, delay: index * 0.04 }}
+              className="group rounded-3xl overflow-hidden border border-white/10 bg-white/[0.04] hover:bg-white/[0.07] transition-all hover:-translate-y-1"
             >
-              {/* IMAGE */}
-              <Image
-                src={pro.proImg}
-                alt="project"
-                fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500 opacity-80"
-              />
+              <div className="relative h-48 overflow-hidden bg-black/30">
+                <Image
+                  src={project.proImg}
+                  alt={project.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
 
-              {/* OVERLAY */}
-              <div
-                className="
-                  absolute inset-0
-                  bg-black/40
-                  flex flex-col
-                  items-center
-                  justify-center
-                  opacity-0
-                  group-hover:opacity-100
-                  transition-all
-                  duration-300
-                  text-center
-                  p-3
-                "
-              >
-                <p className="text-white font-bold">Project</p>
-                <p className="text-xs text-gray-200">
-                  Click for details
+                {project.featured && (
+                  <span className="absolute top-3 left-3 rounded-full bg-[#4fced5] sm:px-3 px-1 py-1 text-xs font-semibold text-black">
+                    Featured
+                  </span>
+                )}
+              </div>
+
+              <div className="sm:p-5 p-2.5">
+                <h2 className="text-xl font-bold mb-2 group-hover:text-[#4fced5] transition">
+                  {project.title}
+                </h2>
+
+                <p className="text-white/65 text-sm leading-relaxed line-clamp-3">
+                  {project.desc}
                 </p>
 
-                <FaAngleDown className="text-[#4fced5] animate-bounce mt-2" />
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.techStack.slice(0, 4).map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full bg-white/5 border border-white/10 sm:px-3 px-1 py-1 text-xs text-white/75"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-                <button
-                  onClick={() => {
-                    setShowProject(true);
-                    setScale(true);
-                    setSingleProject(pro);
-                  }}
-                  className="
-                    mt-3
-                    px-4 py-2
-                    rounded-xl
-                    bg-[#4fced5]
-                    text-black
-                    text-sm
-                    cusror-pointer
-                    font-semibold
-                    hover:scale-105
-                    transition
-                  "
-                >
-                  More Details
-                </button>
+                <div className="flex items-center gap-3 mt-5">
+                  <button
+                    onClick={() => {
+                      setShowProject(true);
+                      setScale(true);
+                      setSingleProject(project);
+                    }}
+                    className="flex-1 rounded-xl bg-[#4fced5] sm:px-4 px-2 py-2 text-sm font-semibold text-black hover:scale-[1.02] transition"
+                  >
+                    View Details
+                  </button>
+
+                  {project.link && (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-10 w-10 rounded-xl border border-white/10 flex items-center justify-center hover:text-[#4fced5] hover:border-[#4fced5] transition"
+                      aria-label="Live Demo"
+                    >
+                      <ExternalLink size={18} />
+                    </a>
+                  )}
+
+                  {project.gitHub && (
+                    <a
+                      href={project.gitHub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-10 w-10 rounded-xl border border-white/10 flex items-center justify-center hover:text-[#4fced5] hover:border-[#4fced5] transition"
+                      aria-label="GitHub"
+                    >
+                      <Github size={18} />
+                    </a>
+                  )}
+                </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
-        </motion.div>
-      </motion.main>
+        </div>
+      </motion.div>
 
-      {/* MODAL */}
       {showProject && singleProject && (
         <SingleProject
           onClose={setShowProject}

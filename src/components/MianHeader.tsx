@@ -1,121 +1,163 @@
 "use client";
 
+import React, { useState } from "react";
 import Link from "next/link";
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X, Github, Linkedin, Download } from "lucide-react";
 import { navItems } from "@/helper";
-import { NavItemProps } from "@/helper";
+
+const resumeLink =
+  "https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing";
 
 const MianHeader = () => {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
   return (
-    <AnimatePresence>
-      <motion.nav
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
-        transition={{ duration: 0.5 }}
-        className="
-          sticky
-          top-0
-          z-50
+    <header className="sticky top-4 z-50">
+      <nav className="rounded-3xl border border-white/10 bg-[#071014]/80 px-4 py-3 shadow-[0_0_30px_rgba(79,206,213,0.08)] backdrop-blur-xl">
+        <div className="flex items-center justify-between gap-4">
+          {/* Brand */}
+          <Link href="/" className="group flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#4fced5] text-lg font-black text-black shadow-[0_0_20px_rgba(79,206,213,0.3)]">
+              R
+            </div>
 
-          w-full
+            <div className="leading-tight">
+              <h1 className="text-sm font-bold text-white transition group-hover:text-[#4fced5] sm:text-base">
+                Rohama Majeed
+              </h1>
+              <p className="text-xs text-white/50">Full Stack Developer</p>
+            </div>
+          </Link>
 
-          flex
-          items-center
-          justify-between
+          {/* Desktop Links */}
+          <div className="hidden items-center gap-1 lg:flex">
+            {navItems.map(({ href, label }) => {
+              const isActive =
+                pathname === href || (href !== "/" && pathname.startsWith(href));
 
-          px-3
-          py-2
-
-          rounded-2xl
-
-          bg-[#26333a]/90
-          backdrop-blur-xl
-
-          border
-          border-[#4fced5]/40
-
-          shadow-[0_0_12px_rgba(79,206,213,0.25)]
-
-          
-        "
-      >
-        {navItems.map(
-          ({ href, icon: Icon, label }: NavItemProps, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex-shrink-0"
-            >
-              <Link
-                href={href}
-                className="group relative flex items-center justify-center"
-              >
-                {/* ICON */}
-                <div
-                  className="
-                    p-2.5
-                    rounded-xl
-
-                    border
-                    border-[#4fced5]/60
-
-                    bg-[#1a2328]
-                    text-white
-
-                    transition-all
-                    duration-300
-
-                    hover:bg-[#4fced5]
-                    hover:text-black
-                    hover:shadow-[0_0_15px_rgba(79,206,213,0.6)]
-                    hover:scale-105
-                  "
-                >
-                  <Icon size={20} />
-                </div>
-
-                {/* TOOLTIP */}
-                <span
-                  className="
-                    absolute
-                    -bottom-8
-                    left-1/2
-                    -translate-x-1/2
-
-                    opacity-0
-                    group-hover:opacity-100
-
-                    transition-all
-                    duration-300
-
-                    bg-[#1a2328]
-                    text-white
-                    text-xs
-
-                    border
-                    border-[#4fced5]/40
-
-                    px-3
-                    py-1.5
-
-                    rounded-lg
-                    whitespace-nowrap
-
-                    hidden
-                    md:block
-                  "
+              return (
+                <Link
+                  key={href}
+                  href={href}
+                  className={`relative rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                    isActive
+                      ? "bg-[#4fced5] text-black"
+                      : "text-white/70 hover:bg-white/5 hover:text-[#4fced5]"
+                  }`}
                 >
                   {label}
-                </span>
-              </Link>
+                </Link>
+              );
+            })}
+          </div>
+
+          {/* Desktop Actions */}
+          <div className="hidden items-center gap-2 lg:flex">
+            <Link
+              href="https://github.com/Rohama-Majeed7"
+              target="_blank"
+              aria-label="GitHub"
+              className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
+            >
+              <Github size={18} />
+            </Link>
+
+            <Link
+              href="https://linkedin.com/in/rohama-majeed-213124282"
+              target="_blank"
+              aria-label="LinkedIn"
+              className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
+            >
+              <Linkedin size={18} />
+            </Link>
+
+            <Link
+              href={resumeLink}
+              target="_blank"
+              className="flex items-center gap-2 rounded-2xl bg-[#4fced5] px-4 py-2 text-sm font-semibold text-black transition hover:scale-105"
+            >
+              <Download size={16} />
+              Resume
+            </Link>
+          </div>
+
+          {/* Mobile Button */}
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:border-[#4fced5] hover:text-[#4fced5] lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden lg:hidden"
+            >
+              <div className="mt-4 grid gap-2 border-t border-white/10 pt-4">
+                {navItems.map(({ href, icon: Icon, label }) => {
+                  const isActive =
+                    pathname === href ||
+                    (href !== "/" && pathname.startsWith(href));
+
+                  return (
+                    <Link
+                      key={href}
+                      href={href}
+                      onClick={() => setOpen(false)}
+                      className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                        isActive
+                          ? "bg-[#4fced5] text-black"
+                          : "bg-white/5 text-white/75 hover:text-[#4fced5]"
+                      }`}
+                    >
+                      <Icon size={18} />
+                      {label}
+                    </Link>
+                  );
+                })}
+
+                <div className="mt-3 grid grid-cols-3 gap-2">
+                  <Link
+                    href="https://github.com/Rohama-Majeed7"
+                    target="_blank"
+                    className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
+                  >
+                    <Github size={18} />
+                  </Link>
+
+                  <Link
+                    href="https://linkedin.com/in/rohama-majeed-213124282"
+                    target="_blank"
+                    className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-3 py-3 text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
+                  >
+                    <Linkedin size={18} />
+                  </Link>
+
+                  <Link
+                    href={resumeLink}
+                    target="_blank"
+                    className="flex items-center justify-center rounded-2xl bg-[#4fced5] px-3 py-3 text-black transition hover:scale-[1.02]"
+                  >
+                    <Download size={18} />
+                  </Link>
+                </div>
+              </div>
             </motion.div>
-          )
-        )}
-      </motion.nav>
-    </AnimatePresence>
+          )}
+        </AnimatePresence>
+      </nav>
+    </header>
   );
 };
 
