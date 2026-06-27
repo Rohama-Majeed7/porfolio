@@ -8,7 +8,7 @@ import { Menu, X, Github, Linkedin, Download } from "lucide-react";
 import { navItems } from "@/helper";
 
 const resumeLink =
-  "https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing";
+  "https://drive.google.com/drive/folders/1Gou1iAxhpQlCBpCKoop5WXUv2krd3Tug";
 
 const MianHeader = () => {
   const pathname = usePathname();
