@@ -7,7 +7,7 @@ import { Download, FileText, CalendarDays } from "lucide-react";
 import { resumeData } from "@/helper";
 
 const resumeLink =
-  "https://drive.google.com/drive/folders/1Gou1iAxhpQlCBpCKoop5WXUv2krd3Tug";
+  "https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing";
 
 const ResumeContent = () => {
   const sortedResumeData = [...resumeData].reverse();

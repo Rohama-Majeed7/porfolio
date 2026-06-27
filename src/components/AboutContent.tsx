@@ -156,7 +156,7 @@ const AboutContent = () => {
               </Link>
 
               <Link
-                href="https://drive.google.com/drive/folders/1Gou1iAxhpQlCBpCKoop5WXUv2krd3Tug"
+                href="https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing"
                 target="_blank"
                 className="flex items-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-[#4fced5] hover:text-[#4fced5]"
               >

@@ -144,7 +144,7 @@ const Hero = () => {
             </Link>
 
             <Link
-              href="https://drive.google.com/file/d/13OEUms27Bf2POgTec_3cfdcu7XEN49wk/view?usp=sharing"
+              href="https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing"
               target="_blank"
               className="flex items-center gap-2 rounded-xl border border-[#4fced5]/40 bg-[#4fced5]/10 px-5 py-3 text-sm font-semibold text-[#4fced5] transition hover:bg-[#4fced5] hover:text-black"
             >
