@@ -52,7 +52,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="relative mx-auto w-full max-w-sm md:hidden"
+          className="relative mx-auto w-full max-w-sm lg:hidden"
         >
           <div className="relative overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116] sm:p-5 p-2 shadow-[0_0_30px_rgba(79,206,213,0.15)]">
             <div className="absolute inset-x-0 top-0 h-28 bg-[#4fced5]/10 blur-3xl" />
@@ -180,7 +180,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.55, delay: 0.1 }}
-          className="relative mx-auto w-full max-w-sm hidden md:block"
+          className="relative mx-auto w-full max-w-sm hidden lg:block"
         >
           <div className="relative overflow-hidden rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#1c2a33] to-[#0b1116] sm:p-5 p-2 shadow-[0_0_30px_rgba(79,206,213,0.15)]">
             <div className="absolute inset-x-0 top-0 h-28 bg-[#4fced5]/10 blur-3xl" />
