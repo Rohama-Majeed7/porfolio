@@ -10,7 +10,7 @@ export default function HomePage() {
       <AboutContent />
       {/* <HomeSkills /> */}
       {/* <HomeExperience /> */}
-      <ContactCTA />
+      {/* <ContactCTA /> */}
     </div>
   );
 }
