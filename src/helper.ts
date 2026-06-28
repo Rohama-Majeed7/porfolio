@@ -7,7 +7,8 @@ import {
   Code,
   Mail,
   LucideIcon,
-  Briefcase
+  Briefcase,
+  IdCard,
 } from "lucide-react";
 import {
   FaHtml5,
@@ -43,10 +44,12 @@ export interface NavItemProps {
 
 export const navItems: NavItemProps[] = [
   { href: "/", icon: Home, label: "Home" },
+  { href: "/about", icon: IdCard, label: "About" },
+
   { href: "/resume", icon: FileText, label: "Resume" },
   { href: "/projects", icon: FolderKanban, label: "Projects" },
   { href: "/skills", icon: Code, label: "Skills" },
-    { href: "/experience", icon: Briefcase, label: "Experience" },
+  { href: "/experience", icon: Briefcase, label: "Experience" },
 
   { href: "/contact", icon: Mail, label: "Contact" },
 

@@ -33,7 +33,7 @@ const MianHeader = () => {
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center  lg:flex">
             {navItems.map(({ href, label }) => {
               const isActive =
                 pathname === href || (href !== "/" && pathname.startsWith(href));
@@ -42,7 +42,7 @@ const MianHeader = () => {
                 <Link
                   key={href}
                   href={href}
-                  className={`relative rounded-2xl px-4 py-2 text-sm font-medium transition ${
+                  className={`relative rounded-2xl xl:px-4 px-3 py-2 text-sm font-medium transition ${
                     isActive
                       ? "bg-[#4fced5] text-black"
                       : "text-white/70 hover:bg-white/5 hover:text-[#4fced5]"
