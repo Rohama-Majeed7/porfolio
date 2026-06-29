@@ -21,6 +21,7 @@ import Prac2 from "@/projects/prac2.png"
 import Prac5 from "@/projects/prac5.png"
 import Prac6 from "@/projects/prac6.png"
 import Prac17Img from "@/projects/resturant-website.png"
+import Prac18Img from "@/projects/todo-app.png"
 import type { StaticImageData } from "next/image";
 
 export type ProjectType = "frontend" | "fullstack" | "client" | "practice";
@@ -167,6 +168,22 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS3", "Javascript"],
     features: [
       "Resturant Website layout",
+      "Responsive cards",
+      "Clean data presentation",
+      "Modern UI styling",
+    ],
+  },
+   {
+    title: "Todo App",
+    proImg: Prac18Img,
+    link: "https://todo-puce-iota-65.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive Todo App for task management.",
+    projectType: "frontend",
+    techStack: ["React", "Vite", "Tailwind CSS", "Redux Toolkit"],
+    features: [
+      "Todo App layout",
       "Responsive cards",
       "Clean data presentation",
       "Modern UI styling",
