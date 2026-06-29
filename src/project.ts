@@ -22,6 +22,7 @@ import Prac5 from "@/projects/prac5.png"
 import Prac6 from "@/projects/prac6.png"
 import Prac17Img from "@/projects/resturant-website.png"
 import Prac18Img from "@/projects/todo-app.png"
+import Prac19Img from "@/projects/quiz-app.png"
 import type { StaticImageData } from "next/image";
 
 export type ProjectType = "frontend" | "fullstack" | "client" | "practice";
@@ -190,6 +191,23 @@ const projects: Project[] = [
     ],
   },
   {
+    title: "Quiz App",
+    proImg: Prac19Img,
+    link: "https://quizz-app-rouge.vercel.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive Quiz App for brain testing.",
+    projectType: "frontend",
+    techStack: ["React", "Vite", "Tailwind CSS",],
+    features: [
+      "Quiz App layout",
+      "Responsive cards",
+      "Clean data presentation",
+      "Modern UI styling",
+    ],
+  },
+  {
+    
     title: "Product Landing Page",
     proImg: Prac12Img,
     link: "https://smart-wtach-landing-page-yxyf.vercel.app/",
