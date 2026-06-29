@@ -20,7 +20,7 @@ import Prac1 from "@/projects/prac1.png"
 import Prac2 from "@/projects/prac2.png"
 import Prac5 from "@/projects/prac5.png"
 import Prac6 from "@/projects/prac6.png"
-
+import Prac17Img from "@/projects/resturant-website.png"
 import type { StaticImageData } from "next/image";
 
 export type ProjectType = "frontend" | "fullstack" | "client" | "practice";
@@ -151,6 +151,22 @@ const projects: Project[] = [
     techStack: ["React", "TypeScript", "Tailwind CSS"],
     features: [
       "Weather dashboard layout",
+      "Responsive cards",
+      "Clean data presentation",
+      "Modern UI styling",
+    ],
+  },
+  {
+    title: "Returant Website",
+    proImg: Prac17Img,
+    link: "https://vocal-fox-92fcb2.netlify.app/",
+    gitHub: "https://github.com/Rohama-Majeed7",
+    linkedIn: "https://www.linkedin.com/in/rohama-majeed-213124282",
+    desc: "A responsive resturant webiste.",
+    projectType: "frontend",
+    techStack: ["HTML", "CSS3", "Javascript"],
+    features: [
+      "Resturant Website layout",
       "Responsive cards",
       "Clean data presentation",
       "Modern UI styling",
