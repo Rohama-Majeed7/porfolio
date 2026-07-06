@@ -14,12 +14,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
-  title: "Rohama Majeed | Full Stack MERN Developer",
+  metadataBase: new URL("https://rohama-majeed.me"),
+
+  title: {
+    default: "Rohama Majeed | Full Stack MERN Developer",
+    template: "%s | Rohama Majeed",
+  },
+
   description:
-    "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
+    "Rohama Majeed is a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
+
   keywords: [
     "Rohama Majeed",
+    "Rohama",
+    "Rohama portfolio",
+    "Rohama Majeed portfolio",
+    "Full Stack MERN Developer",
     "Full Stack Developer",
     "MERN Stack Developer",
     "React Developer",
@@ -27,9 +39,42 @@ export const metadata: Metadata = {
     "Node.js Developer",
     "Frontend Developer",
     "QA Engineer",
-    "Portfolio",
+    "Software Engineer",
   ],
+
   authors: [{ name: "Rohama Majeed" }],
+  creator: "Rohama Majeed",
+  publisher: "Rohama Majeed",
+
+  alternates: {
+    canonical: "/",
+  },
+
+  openGraph: {
+    title: "Rohama Majeed | Full Stack MERN Developer",
+    description:
+      "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
+    url: "https://rohama-majeed.me",
+    siteName: "Rohama Majeed Portfolio",
+    type: "website",
+    locale: "en_US",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Rohama Majeed | Full Stack MERN Developer",
+    description:
+      "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
 };
 
 export default function RootLayout({
