@@ -12,21 +12,17 @@ const BlinkText = () => {
       transition={{ duration: 1 }}
       className="text-center md:text-left flex flex-col gap-2 md:gap-4"
     >
-     
-        <span className="text-[#50ced6] font-bold">
-          <Typewriter
-            words={["Software Engineer","Mern Full Stack"]}
-            loop={0}
-            cursor
-            cursorStyle="_"
-            typeSpeed={90}
-            deleteSpeed={50}
-            delaySpeed={1500}
-          />
-        </span>
-      
-
-     
+      <span className="text-[#ECF0F1] font-bold">
+        <Typewriter
+          words={["Software Engineer", "MERN Full Stack"]}
+          loop={0}
+          cursor
+          cursorStyle="_"
+          typeSpeed={90}
+          deleteSpeed={50}
+          delaySpeed={1500}
+        />
+      </span>
     </motion.div>
   );
 };

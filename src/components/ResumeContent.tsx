@@ -15,7 +15,7 @@ const ResumeContent = () => {
   return (
     <section
       id="resume"
-      className="rounded-3xl border border-white/10 bg-white/[0.04] shadow-[0_0_35px_rgba(79,206,213,0.1)] backdrop-blur-xl min-h-screen w-full px-2 py-5 text-white sm:px-4 sm:py-8"
+      className="rounded-xl border border-[#BDC3C7]/30 bg-[#ECF0F1] min-h-screen w-full px-2 py-5 text-[#2C3E50] sm:px-4 sm:py-8"
     >
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
@@ -25,16 +25,16 @@ const ResumeContent = () => {
           transition={{ duration: 0.45 }}
           className="mb-10 max-w-3xl"
         >
-          <div className="mb-3 mt-2 inline-flex items-center gap-2 rounded-full border border-[#4fced5]/30 bg-[#4fced5]/10 px-4 py-2 text-sm font-medium text-[#4fced5]">
+          <div className="mb-3 mt-2 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]">
             <Sparkles size={16} />
             Resume Timeline
           </div>
 
-          <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
-            My <span className="text-[#4fced5]">Resume</span>
+          <h1 className="text-3xl font-bold leading-tight text-[#2C3E50] sm:text-4xl md:text-5xl">
+            My <span className="text-[#34495E]">Resume</span>
           </h1>
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/60 sm:text-base">
+          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#34495E]/70 sm:text-base">
             A quick overview of my education, experience, skills, and
             professional journey.
           </p>
@@ -43,7 +43,7 @@ const ResumeContent = () => {
             <Link
               href={resumeLink}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#4fced5] px-5 py-3 text-sm font-semibold text-black shadow-[0_0_20px_rgba(79,206,213,0.25)] transition hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#2C3E50] px-5 py-3 text-sm font-semibold text-[#ECF0F1] shadow-lg transition hover:scale-105 hover:bg-[#34495E]"
             >
               <Download size={18} />
               Download CV
@@ -52,12 +52,12 @@ const ResumeContent = () => {
         </motion.div>
 
         {/* Timeline Wrapper */}
-        <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-3 shadow-[0_0_30px_rgba(79,206,213,0.08)] backdrop-blur-xl sm:p-6 md:p-8">
+        <div className="rounded-xl border border-[#BDC3C7]/30 bg-white p-3 shadow-sm sm:p-6 md:p-6">
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#4fced5] via-[#4fced5]/40 to-transparent sm:left-5" />
+            <div className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#34495E] via-[#7F8C8D] to-transparent sm:left-5" />
 
-            <div className="space-y-5">
+            <div className="space-y-4">
               {sortedResumeData.map((item, idx) => (
                 <motion.div
                   key={`${item.year}-${item.title}-${idx}`}
@@ -68,24 +68,24 @@ const ResumeContent = () => {
                   className="relative pl-12 sm:pl-16"
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-[10px] top-5 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#4fced5] bg-[#071014] shadow-[0_0_14px_rgba(79,206,213,0.8)] sm:left-[12px]">
-                    <div className="h-2 w-2 rounded-full bg-[#4fced5]" />
+                  <div className="absolute left-[10px] top-5 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#34495E] bg-[#ECF0F1] shadow-sm sm:left-[12px]">
+                    <div className="h-2 w-2 rounded-full bg-[#34495E]" />
                   </div>
 
                   {/* Card */}
-                  <div className="group rounded-3xl border border-white/10 bg-black/20 p-3 transition-all hover:-translate-y-1 hover:border-[#4fced5]/50 hover:bg-white/[0.05] sm:p-5">
+                  <div className="group rounded-xl border border-[#BDC3C7]/30 bg-white p-3 transition-all hover:-translate-y-1 hover:border-[#34495E]/40 hover:shadow-md sm:p-5">
                     <div className="mb-3 flex flex-wrap items-center gap-3">
-                      <span className="inline-flex items-center gap-2 rounded-full border border-[#4fced5]/30 bg-[#4fced5]/10 px-3 py-1 text-xs font-semibold text-[#4fced5]">
+                      <span className="inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/10 px-3 py-1 text-xs font-semibold text-[#34495E]">
                         <CalendarDays size={14} />
                         {item.year}
                       </span>
                     </div>
 
-                    <h3 className="text-base font-bold text-white sm:text-xl">
+                    <h3 className="text-base font-bold text-[#2C3E50] sm:text-xl">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 text-sm leading-relaxed text-white/65 sm:text-base">
+                    <p className="mt-3 text-sm leading-relaxed text-[#34495E]/70 sm:text-base">
                       {item.desc}
                     </p>
                   </div>
@@ -101,13 +101,13 @@ const ResumeContent = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="mt-8 rounded-3xl border border-[#4fced5]/30 bg-gradient-to-br from-[#0f1720] via-[#142029] to-[#081114] p-3 mb-2 text-left shadow-[0_0_35px_rgba(79,206,213,0.12)] sm:p-6"
+          className="mt-8 rounded-xl border border-[#BDC3C7]/30 bg-[#2C3E50] p-3 sm:p-6 text-[#ECF0F1]"
         >
-          <h2 className="text-xl font-bold text-white sm:text-2xl">
+          <h2 className="text-xl font-bold sm:text-2xl">
             Want to know more about my experience?
           </h2>
 
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/65">
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#BDC3C7]">
             Download my CV to view my complete education, experience, skills,
             and project details.
           </p>
@@ -116,7 +116,7 @@ const ResumeContent = () => {
             <Link
               href={resumeLink}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#4fced5] px-5 py-3 text-sm font-semibold text-black transition hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-xl bg-[#ECF0F1] px-5 py-3 text-sm font-semibold text-[#2C3E50] transition hover:bg-[#BDC3C7] hover:scale-105"
             >
               <Download size={18} />
               Download Resume

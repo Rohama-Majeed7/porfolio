@@ -1,7 +1,15 @@
 
 import ResumeContent from "@/components/ResumeContent";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+  metadataBase: new URL("https://rohama-majeed.dev"),
 
+  title: {
+    default: "Rohama Majeed | Resume",
+    template: "%s | Rohama Majeed",
+  },
+}
 const ResumePage = () => {
   return (
    <ResumeContent/>

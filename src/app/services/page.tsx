@@ -3,7 +3,15 @@ import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { motion } from "framer-motion";
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  metadataBase: new URL("https://rohama-majeed.dev"),
 
+  title: {
+    default: "Rohama Majeed | Services",
+    template: "%s | Rohama Majeed",
+  },
+}
 const serviceList = [
   {
     icon: <FaReact />,

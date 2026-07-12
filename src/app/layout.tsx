@@ -14,13 +14,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rohama-majeed.me"),
+  metadataBase: new URL("https://rohama-majeed.dev"),
 
   title: {
-    default: "Rohama Majeed | Full Stack MERN Developer",
+    default: "Rohama Majeed",
     template: "%s | Rohama Majeed",
+  },
+  icons: {
+    icon: "/android-chrome-192x192.png",
   },
 
   description:
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     title: "Rohama Majeed | Full Stack MERN Developer",
     description:
       "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
-    url: "https://rohama-majeed.me",
+    url: "https://rohama-majeed.dev",
     siteName: "Rohama Majeed Portfolio",
     type: "website",
     locale: "en_US",
@@ -85,12 +87,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[#050b0f] text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[#ECF0F1] text-[#2C3E50] antialiased`}
       >
+        {/* Decorative Background Elements */}
         <div className="fixed inset-0 -z-10 overflow-hidden">
-          <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-[#4fced5]/20 blur-[100px]" />
-          <div className="absolute bottom-[-160px] right-[-120px] h-[360px] w-[360px] rounded-full bg-[#4fced5]/10 blur-[110px]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(79,206,213,0.08),transparent_35%)]" />
+          <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-[#34495E]/20 blur-[100px]" />
+          <div className="absolute bottom-[-160px] right-[-120px] h-[360px] w-[360px] rounded-full bg-[#2C3E50]/10 blur-[110px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(52,73,94,0.08),transparent_40%)]" />
         </div>
 
         <main className="mx-auto min-h-screen w-full max-w-7xl sm:px-4 px-2 py-4 sm:px-6 lg:px-8">
