@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "Rohama Majeed | About",
-    template: "%s | Rohama Majeed",
+    template: "",
   },
 }
 
