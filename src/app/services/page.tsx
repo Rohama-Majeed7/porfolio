@@ -1,5 +1,3 @@
-"use client";
-import React from "react";
 import { FaReact, FaNodeJs } from "react-icons/fa";
 import { GiMagnifyingGlass } from "react-icons/gi";
 import { motion } from "framer-motion";
