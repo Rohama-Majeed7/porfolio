@@ -16,10 +16,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rohama-majeed.dev"),
-
   title: {
     default: "Rohama Majeed",
-    template: "%s | Rohama Majeed",
   },
   icons: {
     icon: "/android-chrome-192x192.png",

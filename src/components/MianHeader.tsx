@@ -7,9 +7,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Github, Linkedin, Download } from "lucide-react";
 import { navItems } from "@/helper";
 
-const resumeLink =
-  "https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing";
-
 const MianHeader = () => {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -72,7 +69,7 @@ const MianHeader = () => {
             </Link>
 
             <Link
-              href={resumeLink}
+              href={process.env.resume || "#"}
               target="_blank"
               className="flex items-center gap-2 rounded-xl bg-[#ECF0F1] px-4 py-2 text-sm font-semibold text-[#2C3E50] transition hover:bg-[#BDC3C7] hover:scale-105"
             >
@@ -142,7 +139,7 @@ const MianHeader = () => {
                   </Link>
 
                   <Link
-                    href={resumeLink}
+                    href={process.env.resume || "#"}
                     target="_blank"
                     className="flex items-center justify-center rounded-2xl bg-[#ECF0F1] px-3 py-3 text-[#2C3E50] transition hover:scale-[1.02]"
                   >

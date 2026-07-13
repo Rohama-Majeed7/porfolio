@@ -6,8 +6,7 @@ import Link from "next/link";
 import { Download, CalendarDays, Sparkles } from "lucide-react";
 import { resumeData } from "@/helper";
 
-const resumeLink =
-  "https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing";
+const resumeLink = process.env.resume || "#";
 
 const ResumeContent = () => {
   const sortedResumeData = [...resumeData].reverse();

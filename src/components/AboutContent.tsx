@@ -128,7 +128,7 @@ const AboutContent = () => {
               </Link>
 
               <Link
-                href="https://drive.google.com/file/d/1nbwdihKZxLB64cDsyM8f2u5_7Qy3n3g-/view?usp=sharing"
+                href={process.env.resume || "#"}
                 target="_blank"
                 className="flex items-center gap-2 rounded-xl border border-[#7F8C8D] px-4 py-2.5 text-sm font-semibold text-[#34495E] transition hover:bg-[#34495E] hover:text-[#ECF0F1] sm:px-5"
               >
