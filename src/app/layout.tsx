@@ -15,12 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rohama-majeed.dev"),
-  title: {
-    default: "Rohama Majeed",
-  },
+  metadataBase: new URL("https://rohamamajeed.dev"),
+  title:  "Rohama Majeed",
   icons: {
-    icon: "/android-chrome-192x192.png",
+    icon: "/icon.png",
   },
 
   description:
@@ -54,7 +52,7 @@ export const metadata: Metadata = {
     title: "Rohama Majeed | Full Stack MERN Developer",
     description:
       "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
-    url: "https://rohama-majeed.dev",
+    url: "https://rohamamajeed.dev",
     siteName: "Rohama Majeed Portfolio",
     type: "website",
     locale: "en_US",
