@@ -34,7 +34,7 @@ const skillGroups = [
     title: "Tools & QA",
     icon: <Wrench size={22} />,
     desc: "Testing, debugging, deployment, and development workflow.",
-    skills: ["Git", "GitHub", "Vercel", "Postman", "Manual Testing"],
+    skills: ["Git", "GitHub", "Vercel", "Postman", "Manual Testing", "Automated Testing", "Playwright"],
   },
 ];
 
