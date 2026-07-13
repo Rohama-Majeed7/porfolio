@@ -25,8 +25,8 @@ const contactCards = [
   {
     icon: <Phone size={20} />,
     title: "Phone / WhatsApp",
-    value: "+92 325 0336309",
-    href: "https://wa.me/923250336309",
+    value: "+92 3481792418",
+    href: "https://wa.me/923481792418",
   },
   {
     icon: <MapPin size={20} />,
