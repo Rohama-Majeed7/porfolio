@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://rohamamajeed.dev"),
   title:  "Rohama Majeed",
   icons: {
-    icon: "/icon.png",
+    icon: "/faavicon.ico",
   },
 
   description:
@@ -46,16 +46,6 @@ export const metadata: Metadata = {
 
   alternates: {
     canonical: "/",
-  },
-
-  openGraph: {
-    title: "Rohama Majeed | Full Stack MERN Developer",
-    description:
-      "Portfolio of Rohama Majeed, a Full Stack MERN Developer skilled in React, Next.js, Node.js, Express, MongoDB, PostgreSQL, Prisma, and QA testing.",
-    url: "https://rohamamajeed.dev",
-    siteName: "Rohama Majeed Portfolio",
-    type: "website",
-    locale: "en_US",
   },
 
   twitter: {
