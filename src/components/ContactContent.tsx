@@ -10,7 +10,7 @@ import {
   Phone,
   Send,
   MapPin,
-  Sparkles,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa";
@@ -31,7 +31,7 @@ const contactCards = [
   {
     icon: <MapPin size={20} />,
     title: "Location",
-    value: "Pakistan",
+    value: "Islamabad, Pakistan",
     href: "#",
   },
 ];
@@ -60,32 +60,42 @@ const ContactContent = () => {
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
+        transition={{ duration: 0.45 }}
         className="mx-auto max-w-6xl"
       >
         {/* Heading */}
-        <div className="mb-10 max-w-3xl">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]">
-            <Sparkles size={16} />
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-10 max-w-3xl"
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]"
+          >
+            <Star size={16} />
             Contact
-          </div>
+          </motion.div>
 
           <h1 className="text-3xl font-bold leading-tight text-[#2C3E50] sm:text-4xl md:text-5xl">
-            Let’s Work Together
+            Let's Work Together
           </h1>
 
           <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#34495E]/70 sm:text-base">
             Have a role, internship, freelance project, or collaboration in
-            mind? I’d love to hear from you.
+            mind? I'd love to hear from you.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -18 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.45 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
             className="rounded-xl border border-[#BDC3C7]/30 bg-white p-2 sm:p-6 md:p-8 shadow-sm"
           >
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-3 py-2 text-sm text-[#ECF0F1] sm:px-4">
@@ -102,47 +112,67 @@ const ContactContent = () => {
             </p>
 
             <div className="space-y-4">
-              {contactCards.map((item) => (
-                <Link
+              {contactCards.map((item, i) => (
+                <motion.div
                   key={item.title}
-                  href={item.href}
-                  target={item.href === "#" ? "_self" : "_blank"}
-                  className="group flex items-center gap-4 rounded-2xl border border-[#BDC3C7]/30 bg-white p-3 transition hover:border-[#34495E] hover:bg-[#ECF0F1] sm:p-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.25 + i * 0.1 }}
+                  whileHover={{ x: 4 }}
                 >
-                  <div className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#34495E]/10 text-[#34495E] transition group-hover:bg-[#34495E] group-hover:text-[#ECF0F1] sm:flex">
-                    {item.icon}
-                  </div>
+                  <Link
+                    href={item.href}
+                    target={item.href === "#" ? "_self" : "_blank"}
+                    className="group flex items-center gap-4 rounded-2xl border border-[#BDC3C7]/30 bg-white p-3 transition hover:border-[#34495E] hover:bg-[#ECF0F1] sm:p-4"
+                  >
+                    <div className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#34495E]/10 text-[#34495E] transition group-hover:bg-[#34495E] group-hover:text-[#ECF0F1] sm:flex">
+                      {item.icon}
+                    </div>
 
-                  <div className="min-w-0">
-                    <h3 className="font-semibold text-[#2C3E50]">{item.title}</h3>
-                    <p className="break-words text-sm text-[#34495E]/70">
-                      {item.value}
-                    </p>
-                  </div>
-                </Link>
+                    <div className="min-w-0">
+                      <h3 className="font-semibold text-[#2C3E50]">{item.title}</h3>
+                      <p className="break-words text-sm text-[#34495E]/70">
+                        {item.value}
+                      </p>
+                    </div>
+                  </Link>
+                </motion.div>
               ))}
             </div>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              {socialLinks.map((item) => (
-                <Link
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.55 }}
+              className="mt-7 flex flex-wrap gap-3"
+            >
+              {socialLinks.map((item, i) => (
+                <motion.div
                   key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  className="flex items-center gap-2 rounded-xl border border-[#BDC3C7]/30 px-3 py-2 text-sm text-[#34495E] transition hover:border-[#2C3E50] hover:bg-[#2C3E50] hover:text-[#ECF0F1] sm:px-4"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.35, delay: 0.6 + i * 0.08 }}
+                  whileHover={{ scale: 1.08 }}
+                  whileTap={{ scale: 0.95 }}
                 >
-                  {item.icon}
-                  {item.label}
-                </Link>
+                  <Link
+                    href={item.href}
+                    target="_blank"
+                    className="flex items-center gap-2 rounded-xl border border-[#BDC3C7]/30 px-3 py-2 text-sm text-[#34495E] transition hover:border-[#2C3E50] hover:bg-[#2C3E50] hover:text-[#ECF0F1] sm:px-4"
+                  >
+                    {item.icon}
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Message Card */}
           <motion.div
-            initial={{ opacity: 0, x: 18 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.45, delay: 0.1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="rounded-xl border border-[#BDC3C7]/30 bg-white p-2 sm:p-6 md:p-8 shadow-sm"
           >
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-3 py-2 text-sm text-[#ECF0F1] sm:px-4">
@@ -159,36 +189,68 @@ const ContactContent = () => {
             </p>
 
             <div className="space-y-4">
-              <div className="rounded-xl border border-[#BDC3C7]/30 bg-[#ECF0F1] p-3 sm:p-5">
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.35 }}
+                className="rounded-xl border border-[#BDC3C7]/30 bg-[#ECF0F1] p-3 sm:p-5"
+              >
                 <h3 className="mb-3 font-semibold text-[#34495E]">
-                  I’m interested in:
+                  I'm interested in:
                 </h3>
 
                 <ul className="space-y-2 text-sm leading-relaxed text-[#34495E]/80">
-                  <li>• Junior Full Stack Developer roles</li>
-                  <li>• MERN Stack Developer roles</li>
-                  <li>• Frontend Developer roles</li>
-                  <li>• QA Engineer roles</li>
-                  <li>• Freelance web development projects</li>
+                  {[
+                    "Junior Full Stack Developer roles",
+                    "MERN Stack Developer roles",
+                    "Frontend Developer roles",
+                    "QA Engineer roles",
+                    "Freelance web development projects",
+                  ].map((role, i) => (
+                    <motion.li
+                      key={role}
+                      initial={{ opacity: 0, x: -12 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.35, delay: 0.4 + i * 0.07 }}
+                    >
+                      • {role}
+                    </motion.li>
+                  ))}
                 </ul>
-              </div>
+              </motion.div>
 
-              <Link
-                href="mailto:rohamamajeed4@gmail.com?subject=Work Opportunity&body=Hi Rohama, I visited your portfolio and would like to discuss an opportunity with you."
-                className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2C3E50] px-4 py-3 text-sm font-semibold text-[#ECF0F1] shadow-lg transition hover:scale-[1.02] hover:bg-[#34495E]"
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.75 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <Send size={18} />
-                Send Email
-              </Link>
+                <Link
+                  href="mailto:rohamamajeed4@gmail.com?subject=Work Opportunity&body=Hi Rohama, I visited your portfolio and would like to discuss an opportunity with you."
+                  className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#2C3E50] px-4 py-3 text-sm font-semibold text-[#ECF0F1] shadow-lg transition hover:bg-[#34495E]"
+                >
+                  <Send size={18} />
+                  Send Email
+                </Link>
+              </motion.div>
 
-              <Link
-                href="https://wa.me/923481792418"
-                target="_blank"
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#BDC3C7]/30 px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:border-[#2C3E50] hover:bg-[#2C3E50] hover:text-[#ECF0F1]"
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.85 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                <FaWhatsapp size={18} />
-                Message on WhatsApp
-              </Link>
+                <Link
+                  href="https://wa.me/923481792418"
+                  target="_blank"
+                  className="flex w-full items-center justify-center gap-2 rounded-xl border border-[#BDC3C7]/30 px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:border-[#2C3E50] hover:bg-[#2C3E50] hover:text-[#ECF0F1]"
+                >
+                  <FaWhatsapp size={18} />
+                  Message on WhatsApp
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>

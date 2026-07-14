@@ -3,10 +3,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Download, CalendarDays, Sparkles } from "lucide-react";
+import { Download, CalendarDays, Star } from "lucide-react";
 import { resumeData } from "@/helper";
 
-const resumeLink = process.env.resume || "#";
+const resumeLink = process.env.NEXT_PUBLIC_RESUME || "#";
 
 const ResumeContent = () => {
   const sortedResumeData = [...resumeData].reverse();
@@ -19,60 +19,103 @@ const ResumeContent = () => {
       <div className="mx-auto max-w-6xl">
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45 }}
+          transition={{ duration: 0.5 }}
           className="mb-10 max-w-3xl"
         >
-          <div className="mb-3 mt-2 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]">
-            <Sparkles size={16} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mb-3 mt-2 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]"
+          >
+            <Star size={16} />
             Resume Timeline
-          </div>
+          </motion.div>
 
-          <h1 className="text-3xl font-bold leading-tight text-[#2C3E50] sm:text-4xl md:text-5xl">
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-3xl font-bold leading-tight text-[#2C3E50] sm:text-4xl md:text-5xl"
+          >
             My <span className="text-[#34495E]">Resume</span>
-          </h1>
+          </motion.h1>
 
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[#34495E]/70 sm:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.22 }}
+            className="mt-4 max-w-2xl text-sm leading-relaxed text-[#34495E]/70 sm:text-base"
+          >
             A quick overview of my education, experience, skills, and
             professional journey.
-          </p>
+          </motion.p>
 
-          <div className="mt-5">
-            <Link
-              href={resumeLink}
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#2C3E50] px-5 py-3 text-sm font-semibold text-[#ECF0F1] shadow-lg transition hover:scale-105 hover:bg-[#34495E]"
-            >
-              <Download size={18} />
-              Download CV
-            </Link>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: 0.3 }}
+            className="mt-5"
+          >
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href={resumeLink}
+                target="_blank"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#2C3E50] px-5 py-3 text-sm font-semibold text-[#ECF0F1] shadow-lg transition hover:bg-[#34495E]"
+              >
+                <Download size={18} />
+                Download CV
+              </Link>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
         {/* Timeline Wrapper */}
-        <div className="rounded-xl border border-[#BDC3C7]/30 bg-white p-3 shadow-sm sm:p-6 md:p-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="rounded-xl border border-[#BDC3C7]/30 bg-white p-3 shadow-sm sm:p-6 md:p-6"
+        >
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#34495E] via-[#7F8C8D] to-transparent sm:left-5" />
+            <motion.div
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              style={{ originY: 0 }}
+              className="absolute left-4 top-0 h-full w-[2px] bg-gradient-to-b from-[#34495E] via-[#7F8C8D] to-transparent sm:left-5"
+            />
 
             <div className="space-y-4">
               {sortedResumeData.map((item, idx) => (
                 <motion.div
                   key={`${item.year}-${item.title}-${idx}`}
-                  initial={{ opacity: 0, x: 24 }}
+                  initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: idx * 0.06 }}
+                  transition={{ duration: 0.45, delay: idx * 0.08 }}
                   className="relative pl-12 sm:pl-16"
                 >
                   {/* Timeline Dot */}
-                  <div className="absolute left-[10px] top-5 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#34495E] bg-[#ECF0F1] shadow-sm sm:left-[12px]">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: idx * 0.08 + 0.1, type: "spring", stiffness: 300 }}
+                    className="absolute left-[10px] top-5 z-10 flex h-5 w-5 items-center justify-center rounded-full border-2 border-[#34495E] bg-[#ECF0F1] shadow-sm sm:left-[12px]"
+                  >
                     <div className="h-2 w-2 rounded-full bg-[#34495E]" />
-                  </div>
+                  </motion.div>
 
                   {/* Card */}
-                  <div className="group rounded-xl border border-[#BDC3C7]/30 bg-white p-3 transition-all hover:-translate-y-1 hover:border-[#34495E]/40 hover:shadow-md sm:p-5">
+                  <motion.div
+                    whileHover={{ x: 4, transition: { duration: 0.2 } }}
+                    className="group rounded-xl border border-[#BDC3C7]/30 bg-white p-3 transition-all hover:border-[#34495E]/40 hover:shadow-md sm:p-5"
+                  >
                     <div className="mb-3 flex flex-wrap items-center gap-3">
                       <span className="inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/10 px-3 py-1 text-xs font-semibold text-[#34495E]">
                         <CalendarDays size={14} />
@@ -87,19 +130,19 @@ const ResumeContent = () => {
                     <p className="mt-3 text-sm leading-relaxed text-[#34495E]/70 sm:text-base">
                       {item.desc}
                     </p>
-                  </div>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.5 }}
           className="mt-8 rounded-xl border border-[#BDC3C7]/30 bg-[#2C3E50] p-3 sm:p-6 text-[#ECF0F1]"
         >
           <h2 className="text-xl font-bold sm:text-2xl">
@@ -112,14 +155,16 @@ const ResumeContent = () => {
           </p>
 
           <div className="mt-5">
-            <Link
-              href={resumeLink}
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl bg-[#ECF0F1] px-5 py-3 text-sm font-semibold text-[#2C3E50] transition hover:bg-[#BDC3C7] hover:scale-105"
-            >
-              <Download size={18} />
-              Download Resume
-            </Link>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}>
+              <Link
+                href={resumeLink}
+                target="_blank"
+                className="inline-flex items-center gap-2 rounded-xl bg-[#ECF0F1] px-5 py-3 text-sm font-semibold text-[#2C3E50] transition hover:bg-[#BDC3C7]"
+              >
+                <Download size={18} />
+                Download Resume
+              </Link>
+            </motion.div>
           </div>
         </motion.div>
       </div>

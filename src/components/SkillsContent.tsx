@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   Code2,
   Server,
   Database,
   Wrench,
-  Sparkles,
+  Star,
   CheckCircle2,
 } from "lucide-react";
 
@@ -38,16 +38,44 @@ const skillGroups = [
   },
 ];
 
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12 },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30, scale: 0.97 },
+  visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const tagVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+};
+
 const HomeSkills = () => {
   return (
     <section className="rounded-xl border border-[#BDC3C7]/30 bg-[#ECF0F1] p-3 text-[#2C3E50] sm:p-6 md:p-8">
       {/* Heading */}
       <div className="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-        <div>
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]">
-            <Sparkles size={16} />
-            Skills & Tools
-          </div>
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="mb-3 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm font-medium text-[#ECF0F1]"
+          >
+            <Star size={16} />
+            Skills &amp; Tools
+          </motion.div>
 
           <h2 className="text-3xl font-bold text-[#2C3E50] md:text-4xl">
             Technical Skills
@@ -57,40 +85,59 @@ const HomeSkills = () => {
             Technologies I use to build responsive, full-stack, and reliable web
             applications.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid w-full w-fit sm:grid-cols-2 gap-3">
-          <div className="rounded-xl border border-[#BDC3C7]/30 bg-white px-4 py-3 text-center shadow-sm">
-            <h3 className="text-xl font-bold text-[#34495E]">21+</h3>
-            <p className="text-xs text-[#7F8C8D]">Projects</p>
-          </div>
-
-          <div className="rounded-xl border border-[#BDC3C7]/30 bg-white px-4 py-3 text-center shadow-sm">
-            <h3 className="text-xl font-bold text-[#34495E]">4</h3>
-            <p className="text-xs text-[#7F8C8D]">Skill Areas</p>
-          </div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="grid w-full w-fit sm:grid-cols-2 gap-3"
+        >
+          {[{ value: "21+", label: "Projects" }, { value: "4", label: "Skill Areas" }].map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              whileHover={{ scale: 1.05 }}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
+              className="rounded-xl border border-[#BDC3C7]/30 bg-white px-4 py-3 text-center shadow-sm cursor-default"
+            >
+              <h3 className="text-xl font-bold text-[#34495E]">{stat.value}</h3>
+              <p className="text-xs text-[#7F8C8D]">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Skill Cards */}
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-        {skillGroups.map((group, index) => (
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-50px" }}
+        className="grid grid-cols-1 gap-5 md:grid-cols-2"
+      >
+        {skillGroups.map((group) => (
           <motion.div
             key={group.title}
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.35, delay: index * 0.06 }}
-            className="group relative overflow-hidden rounded-xl border border-[#BDC3C7]/30 bg-white p-5 shadow-sm transition-all hover:-translate-y-1 hover:border-[#34495E]/40 hover:shadow-md"
+            variants={cardVariants}
+            whileHover={{ y: -5 }}
+            className="group relative overflow-hidden rounded-xl border border-[#BDC3C7]/30 bg-white p-5 shadow-sm transition-all hover:border-[#34495E]/40 hover:shadow-md"
           >
             <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-[#34495E]/10 transition group-hover:bg-[#34495E]/20" />
 
             <div className="relative">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#7F8C8D]/30 bg-[#34495E]/10 text-[#34495E] p-2">
+                  <motion.div
+                    whileHover={{ rotate: 12, scale: 1.1 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#7F8C8D]/30 bg-[#34495E]/10 text-[#34495E] p-2"
+                  >
                     {group.icon}
-                  </div>
+                  </motion.div>
 
                   <div>
                     <h3 className="text-xl font-bold text-[#2C3E50]">
@@ -112,20 +159,25 @@ const HomeSkills = () => {
                 {group.desc}
               </p>
 
-              <div className="flex flex-wrap gap-2">
+              <motion.div
+                variants={{ visible: { transition: { staggerChildren: 0.06 } } }}
+                className="flex flex-wrap gap-2"
+              >
                 {group.skills.map((skill) => (
-                  <span
+                  <motion.span
                     key={skill}
-                    className="rounded-full border border-[#BDC3C7]/30 bg-[#ECF0F1] px-3 py-1.5 text-xs font-medium text-[#34495E] transition group-hover:border-[#34495E]/50"
+                    variants={tagVariants}
+                    whileHover={{ scale: 1.08, backgroundColor: "#34495E", color: "#ECF0F1" }}
+                    className="rounded-full border border-[#BDC3C7]/30 bg-[#ECF0F1] px-3 py-1.5 text-xs font-medium text-[#34495E] transition-colors cursor-default"
                   >
                     {skill}
-                  </span>
+                  </motion.span>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

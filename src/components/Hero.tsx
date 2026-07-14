@@ -11,7 +11,7 @@ import {
   FileUser,
   FolderKanban,
   MessageCircle,
-  Sparkles,
+  Star,
   ArrowRight,
 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
@@ -38,6 +38,12 @@ const socialLinks = [
     href: "https://github.com/Rohama-Majeed7",
     label: "GitHub",
   },
+];
+
+const stats = [
+  { value: "20+", label: "Projects" },
+  { value: "2+", label: "Internships" },
+  { value: "7+", label: "Months" },
 ];
 
 const Hero = () => {
@@ -68,14 +74,19 @@ const Hero = () => {
             </div>
 
             <div className="relative -mt-12 flex justify-center">
-              <Image
-                src="/my2img.png"
-                alt="Rohama Majeed"
-                width={115}
-                height={115}
-                className="rounded-full border-4 border-[#BDC3C7] bg-[#2C3E50] shadow-xl"
-                priority
-              />
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/my2img.png"
+                  alt="Rohama Majeed"
+                  width={115}
+                  height={115}
+                  className="rounded-full border-4 border-[#BDC3C7] bg-[#2C3E50] shadow-xl"
+                  priority
+                />
+              </motion.div>
             </div>
 
             <div className="relative mt-4 text-center">
@@ -85,20 +96,18 @@ const Hero = () => {
               </p>
 
               <div className="mt-5 grid grid-cols-3 gap-3">
-                <div className="rounded-2xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">20+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Projects</p>
-                </div>
-
-                <div className="rounded-2xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">2+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Internships</p>
-                </div>
-
-                <div className="rounded-2xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">7+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Months</p>
-                </div>
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.4 + i * 0.1 }}
+                    className="rounded-2xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2"
+                  >
+                    <h4 className="text-xl font-bold text-[#BDC3C7]">{stat.value}</h4>
+                    <p className="text-xs text-[#ECF0F1]/70">{stat.label}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
@@ -110,29 +119,59 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
         >
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm text-[#ECF0F1]">
-            <Sparkles size={16} />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.45, delay: 0.1 }}
+            className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#7F8C8D]/30 bg-[#34495E]/80 px-4 py-2 text-sm text-[#ECF0F1]"
+          >
+            <motion.span
+              animate={{ rotate: [0, 15, -10, 15, 0] }}
+              transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+            >
+              <Star size={16} />
+            </motion.span>
             <BlinkText />
-          </div>
+          </motion.div>
 
-          <h1 className="max-w-3xl sm:text-4xl text-2xl font-bold leading-tight text-[#2C3E50] sm:text-5xl lg:text-6xl">
-            Hi, I’m{" "}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="max-w-3xl sm:text-4xl text-2xl font-bold leading-tight text-[#2C3E50] sm:text-5xl lg:text-6xl"
+          >
+            Hi, I'm{" "}
             <span className="text-[#34495E]">Rohama Majeed</span>
-          </h1>
+          </motion.h1>
 
-          <h2 className="mt-4 text-xl font-semibold text-[#2C3E50]/90 sm:text-2xl">
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-4 text-xl font-semibold text-[#2C3E50]/90 sm:text-2xl"
+          >
             Full Stack MERN Developer
-          </h2>
+          </motion.h2>
 
-          <p className="mt-5 max-w-2xl text-sm leading-relaxed text-[#34495E]/80 sm:text-base">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-5 max-w-2xl text-sm leading-relaxed text-[#34495E]/80 sm:text-base"
+          >
             Full Stack MERN Developer building responsive, scalable, and reliable web
             applications with modern technologies.
-          </p>
+          </motion.p>
 
-          <div className="mt-7 flex flex-wrap gap-3">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="mt-7 flex flex-wrap gap-3"
+          >
             <Link
               href="/projects"
-              className="flex items-center gap-2 rounded-xl bg-[#2C3E50] px-4 py-3 text-sm font-semibold text-[#ECF0F1] transition hover:bg-[#34495E] hover:scale-105"
+              className="flex items-center gap-2 rounded-xl bg-[#2C3E50] px-4 py-3 text-sm font-semibold text-[#ECF0F1] transition hover:bg-[#34495E] hover:scale-105 active:scale-95"
             >
               <FolderKanban size={18} />
               View Projects
@@ -140,9 +179,9 @@ const Hero = () => {
             </Link>
 
             <Link
-              href={process.env.resume || "#"}
+              href={process.env.NEXT_PUBLIC_RESUME || "#"}
               target="_blank"
-              className="flex items-center gap-2 rounded-xl border border-[#7F8C8D] bg-transparent px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:bg-[#34495E] hover:text-[#ECF0F1]"
+              className="flex items-center gap-2 rounded-xl border border-[#7F8C8D] bg-transparent px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:bg-[#34495E] hover:text-[#ECF0F1] active:scale-95"
             >
               <FileUser size={18} />
               Resume
@@ -150,33 +189,46 @@ const Hero = () => {
 
             <Link
               href="/contact"
-              className="flex items-center gap-2 rounded-xl border border-[#7F8C8D] px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:border-[#2C3E50] hover:text-[#2C3E50]"
+              className="flex items-center gap-2 rounded-xl border border-[#7F8C8D] px-4 py-3 text-sm font-semibold text-[#34495E] transition hover:border-[#2C3E50] hover:text-[#2C3E50] active:scale-95"
             >
               <MessageCircle size={18} />
               Contact
             </Link>
-          </div>
+          </motion.div>
 
-          <div className="mt-7 flex flex-wrap gap-3">
-            {socialLinks.map((item) => (
-              <Link
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-7 flex flex-wrap gap-3"
+          >
+            {socialLinks.map((item, i) => (
+              <motion.div
                 key={item.label}
-                href={item.href}
-                target="_blank"
-                aria-label={item.label}
-                className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#7F8C8D]/50 bg-white/80 text-[#34495E] transition hover:bg-[#2C3E50] hover:text-[#ECF0F1]"
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35, delay: 0.65 + i * 0.07 }}
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
               >
-                {item.icon}
-              </Link>
+                <Link
+                  href={item.href}
+                  target="_blank"
+                  aria-label={item.label}
+                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#7F8C8D]/50 bg-white/80 text-[#34495E] transition hover:bg-[#2C3E50] hover:text-[#ECF0F1]"
+                >
+                  {item.icon}
+                </Link>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Desktop Profile Card */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.55, delay: 0.1 }}
+          initial={{ opacity: 0, scale: 0.88, x: 30 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
           className="relative mx-auto w-full max-w-sm hidden lg:block"
         >
           <div className="relative overflow-hidden rounded-xl border border-[#34495E]/30 bg-gradient-to-br from-[#2C3E50] via-[#34495E] to-[#2C3E50] sm:p-5 p-2 shadow-xl">
@@ -194,14 +246,19 @@ const Hero = () => {
             </div>
 
             <div className="relative -mt-12 flex justify-center">
-              <Image
-                src="/my2img.png"
-                alt="Rohama Majeed"
-                width={115}
-                height={115}
-                className="rounded-full border-4 border-[#BDC3C7] bg-[#2C3E50] shadow-xl"
-                priority
-              />
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <Image
+                  src="/my2img.png"
+                  alt="Rohama Majeed"
+                  width={115}
+                  height={115}
+                  className="rounded-full border-4 border-[#BDC3C7] bg-[#2C3E50] shadow-xl"
+                  priority
+                />
+              </motion.div>
             </div>
 
             <div className="relative mt-4 text-center">
@@ -211,20 +268,19 @@ const Hero = () => {
               </p>
 
               <div className="mt-5 grid grid-cols-3 gap-3">
-                <div className="rounded-xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">20+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Projects</p>
-                </div>
-
-                <div className="rounded-xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">2+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Internships</p>
-                </div>
-
-                <div className="rounded-xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2">
-                  <h4 className="text-xl font-bold text-[#BDC3C7]">7+</h4>
-                  <p className="text-xs text-[#ECF0F1]/70">Months</p>
-                </div>
+                {stats.map((stat, i) => (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: 0.5 + i * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="rounded-xl border border-[#7F8C8D]/30 bg-white/5 sm:p-3 p-2 cursor-default"
+                  >
+                    <h4 className="text-xl font-bold text-[#BDC3C7]">{stat.value}</h4>
+                    <p className="text-xs text-[#ECF0F1]/70">{stat.label}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
